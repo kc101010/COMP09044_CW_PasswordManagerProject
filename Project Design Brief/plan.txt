@@ -1,0 +1,51 @@
+Plan
+
+Overview of problem
+
+Computer users need a secure, reliable method of managing their personal login data. Too easy is it for someone to use the same password for all their online accounts or being unaware that their data has been breached. The password program will be a tool to help users make their data more secure and ensure their awareness of their data security
+
+Emphasise as a tool to assist users.  
+
+Software purpose
+    • Generate secure passwords for user
+    • Allow user to easily use stored details for their online accounts
+    • Allow user to check if their data has been compromised in any way, shape or form
+    • Facilitate a simple yet effective means of using login data in a secure manner
+    • Software is accessible to all 
+
+SDLC Justifications
+    • More time focused on software development and creating product
+    • No need to iterate through every single step in dev process – much more practical
+    • Foundation of prototyping/building should speed up development
+
+Analysis
+    • Data Structure: LinkedList? (research and decide!)
+    • Assumptions:
+    • Justifications:
+
+Potential implementation
+    • Language: C++
+    • IDE: QT 
+    • Testing Method: 
+    • Risk analysis:
+    • Gantt Chart
+
+Reflections on Ethics
+    • Several modern methods will be researched and used to ensure security of data
+    • No data will leave the system, be transmitted to myself or a 3rd party
+    • Software will undergo penetration/security tests to scrutinise implementations
+    
+    
+    References
+    https://www.lastpass.com/
+    https://www.dashlane.com/plans
+    https://nordpass.com/plans/
+    https://www.ncsc.gov.uk/collection/passwords/updating-your-approach#tip3-password-collection
+    https://haveibeenpwned.com/
+    https://monitor.firefox.com/
+    https://www.washington.edu/doit/designing-software-accessible-individuals-disabilities
+    https://praxent.com/blog/digital-accessibility-software-checklist
+    https://www.outsystems.com/blog/posts/rapid-application-development/
+    https://blog.capterra.com/what-is-rapid-application-development/
+    https://www.qt.io/
+    https://www.qt.io/product/features
