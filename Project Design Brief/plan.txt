@@ -49,3 +49,4 @@ Reflections on Ethics
     https://blog.capterra.com/what-is-rapid-application-development/
     https://www.qt.io/
     https://www.qt.io/product/features
+    https://www.lucidchart.com/blog/rapid-application-development-methodology
