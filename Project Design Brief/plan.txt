@@ -40,6 +40,8 @@ Reflections on Ethics
     https://www.lastpass.com/
     https://www.dashlane.com/plans
     https://nordpass.com/plans/
+    https://keepass.info/index.html
+    https://www.keepassx.org/
     https://www.ncsc.gov.uk/collection/passwords/updating-your-approach#tip3-password-collection
     https://haveibeenpwned.com/
     https://monitor.firefox.com/
@@ -50,3 +52,4 @@ Reflections on Ethics
     https://www.qt.io/
     https://www.qt.io/product/features
     https://www.lucidchart.com/blog/rapid-application-development-methodology
+    https://cybernews.com/best-password-managers/how-do-password-managers-work/
