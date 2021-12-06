@@ -36,20 +36,34 @@ Reflections on Ethics
     • Software will undergo penetration/security tests to scrutinise implementations
     
     
-    References
-    https://www.lastpass.com/
-    https://www.dashlane.com/plans
-    https://nordpass.com/plans/
-    https://keepass.info/index.html
-    https://www.keepassx.org/
-    https://www.ncsc.gov.uk/collection/passwords/updating-your-approach#tip3-password-collection
-    https://haveibeenpwned.com/
-    https://monitor.firefox.com/
-    https://www.washington.edu/doit/designing-software-accessible-individuals-disabilities
-    https://praxent.com/blog/digital-accessibility-software-checklist
-    https://www.outsystems.com/blog/posts/rapid-application-development/
-    https://blog.capterra.com/what-is-rapid-application-development/
-    https://www.qt.io/
-    https://www.qt.io/product/features
-    https://www.lucidchart.com/blog/rapid-application-development-methodology
-    https://cybernews.com/best-password-managers/how-do-password-managers-work/
+References
+https://www.lastpass.com/pricing
+https://www.dashlane.com/plans
+https://nordpass.com/plans/
+https://keepass.info/features.html
+https://www.keepassx.org/features
+
+https://www.ncsc.gov.uk/collection/passwords/updating-your-approach#tip3-password-collection
+https://cybernews.com/best-password-managers/how-do-password-managers-work/
+
+https://haveibeenpwned.com/
+https://monitor.firefox.com/
+
+https://www.washington.edu/doit/designing-software-accessible-individuals-disabilities
+https://praxent.com/blog/digital-accessibility-software-checklist
+
+https://www.qt.io/
+https://www.qt.io/product
+https://www.qt.io/product/features
+
+https://www.outsystems.com/blog/posts/rapid-application-development/
+https://blog.capterra.com/what-is-rapid-application-development/
+https://www.lucidchart.com/blog/rapid-application-development-methodology
+    
+    
+    
+    
+    
+    
+    
+    
