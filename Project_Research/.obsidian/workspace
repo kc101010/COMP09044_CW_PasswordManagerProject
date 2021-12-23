@@ -1,0 +1,95 @@
+{
+  "main": {
+    "id": "bbab916c440faf82",
+    "type": "split",
+    "children": [
+      {
+        "id": "f9182e9c462d9375",
+        "type": "leaf",
+        "state": {
+          "type": "markdown",
+          "state": {
+            "file": "Research notes.md",
+            "mode": "preview"
+          }
+        }
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "d4663fec11086f62",
+    "type": "split",
+    "children": [
+      {
+        "id": "c298ba7729048191",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "8bd6004d94fd1a29",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {}
+            }
+          },
+          {
+            "id": "b208099051e11cdd",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "2bb7854d17367910",
+    "type": "split",
+    "children": [
+      {
+        "id": "af9ebf91c6208654",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "3727e08d1ab80b82",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "Research notes.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "active": "f9182e9c462d9375",
+  "lastOpenFiles": [
+    "Research notes.md",
+    "Research plans.md",
+    "hello.md"
+  ]
+}
