@@ -21,11 +21,11 @@ https://youtu.be/OBpX6R_lEnY
 3. build project
 4. add QtCrypto header to project
 
-
-
-
 ### Security 
 
 ### haveibeenpwned/ vuln checks
+https://www.youtube.com/watch?v=VYwdcBxHobs 
+(opens link in browser - not as envisioned but still provides the functionality)
+
 
 ### Accessibility
