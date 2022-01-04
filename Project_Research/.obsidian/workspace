@@ -9,7 +9,7 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "Interface Research.md",
+            "file": "Research notes.md",
             "mode": "preview"
           }
         }
@@ -68,7 +68,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Interface Research.md",
+                "file": "Research notes.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -88,8 +88,8 @@
   },
   "active": "f9182e9c462d9375",
   "lastOpenFiles": [
-    "Interface Research.md",
     "Research notes.md",
+    "Interface Research.md",
     "Research plans.md",
     "hello.md"
   ]
