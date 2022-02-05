@@ -47,3 +47,18 @@ https://www.youtube.com/watch?v=VYwdcBxHobs
 
 
 ### Accessibility
+
+
+
+
+
+
+
+
+
+
+
+
+### misc
+
+https://doc.qt.io/qt-5/sql-connecting.html
