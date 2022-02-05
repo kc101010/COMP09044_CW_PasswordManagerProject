@@ -9,7 +9,8 @@ int main(int argc, char *argv[])
     MainWindow w;
 
     //run various unit tests
-    //UnitTest();
+    //UnitTest().password_generation();
+    UnitTest().account_creation();
 
     w.show();
     return a.exec();
