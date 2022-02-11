@@ -10,13 +10,14 @@
 class Account
 {
     private:
-        QString username;
-        QString password;
-        QString email;
-        QDate lastUse;
-        QDate dateCreated;
+        QString username;       //store username for account
+        QString password;       //store hashed password for account
+        QString email;          //store email for account
+        QDate lastUse;          //track when account was last used
+        QDate dateCreated;      //store when a specific account was first created
+
     public:
-        Account(QString un, QString pw, QString em, QDate dc);
+        Account(QString un, QString pw, QString em, QDate dc);  //constructor used to set up account
         QString get_password();
         void set_password(QString new_pword);
         QString get_username();

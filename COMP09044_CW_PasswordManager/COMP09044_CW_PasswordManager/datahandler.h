@@ -15,15 +15,15 @@
 class DataHandler
 {
     private:
-        QSqlDatabase db;
-        QFile DataFile;
+        QSqlDatabase db;   //stores database to be used
+        QFile DataFile;    //stores database file for encryption/decryption
     public:
         DataHandler();
-        void saveAccount(Account *acc_save);
-        void deleteAccount(Account *acc_del);
-        void editAccount(Account *acc_edit);
-        void EncryptDB();
-        void DecryptDB();
+        void saveAccount(Account *acc_save);    //saves a new account to database
+        void deleteAccount(Account *acc_del);   //deletes account from database
+        void editAccount(Account *acc_edit);    //edits existing account information
+        void EncryptDB();                       //Encrypts database file for security
+        void DecryptDB();                       //Decrypts database file for program use
         void setDataFile(QString fname);
         QFile getDataFile();
 
