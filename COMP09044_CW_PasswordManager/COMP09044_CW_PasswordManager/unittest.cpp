@@ -53,3 +53,23 @@ void UnitTest::account_creation(){
     }
 }
 
+void UnitTest::data_handling(){
+    Password pw;
+    QDate today = QDate::currentDate();
+    pw.password_builder(16);
+
+    try{
+        Account *julia = new Account("julia1131", pw.get_password(), "jules@hotmail.com", today);
+        julia->set_last_use(today);
+        DataHandler *dh = new DataHandler();
+
+        dh->saveAccount(julia);
+
+        delete dh;
+        delete julia;
+    }catch(QException e){
+        qDebug() << "Unit Test Failed: " << e.what() << Qt::endl;
+    }
+
+}
+

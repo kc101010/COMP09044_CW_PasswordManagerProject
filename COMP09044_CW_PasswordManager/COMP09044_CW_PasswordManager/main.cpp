@@ -10,7 +10,8 @@ int main(int argc, char *argv[])
 
     //run various unit tests
     //UnitTest().password_generation();
-    UnitTest().account_creation();
+    //UnitTest().account_creation();
+    UnitTest().data_handling();
 
     w.show();
     return a.exec();
