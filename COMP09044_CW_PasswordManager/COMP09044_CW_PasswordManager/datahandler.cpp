@@ -7,7 +7,7 @@ DataHandler::DataHandler(){
         //create a new database, set its name for db and encryption functionality
         db = QSqlDatabase::addDatabase("QSQLITE");
         db.setDatabaseName("p_program.sqlite");
-        setDataFile("p_program.sqlite");
+        setFile("p_program.sqlite");
         db.open();
         //ensure table exists
         QSqlQuery stm("CREATE TABLE IF NOT EXISTS accounts(username TEXT, password TEXT, email TEXT, last_used DATE, creation_date DATE)");
@@ -101,4 +101,20 @@ void DataHandler::editAccount(Account *acc_edit){
     }catch(QSqlError e){
         qDebug() << e.text() << e.type() << Qt::endl;
     }
+}
+
+void DataHandler::setFile(QString fname){
+    if(fname.contains(".sqlite")){
+        DataFile.setFileName(fname);
+    }else{
+        qDebug() << "Name is not valid!" << Qt::endl;
+    }
+}
+
+void DataHandler::EncryptDB(){
+
+}
+
+void DataHandler::DecryptDB(){
+
 }

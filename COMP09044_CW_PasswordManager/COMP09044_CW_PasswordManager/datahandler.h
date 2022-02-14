@@ -11,6 +11,7 @@
 #include <QSqlDriver>
 #include <QSqlError>
 #include <QSqlQuery>
+#include <QtCrypto>
 
 class DataHandler
 {
@@ -24,7 +25,7 @@ class DataHandler
         void editAccount(Account *acc_edit);    //edits existing account information
         void EncryptDB();                       //Encrypts database file for security
         void DecryptDB();                       //Decrypts database file for program use
-        void setDataFile(QString fname);
+        void setFile(QString fname);
         QFile getDataFile();
 
 };
