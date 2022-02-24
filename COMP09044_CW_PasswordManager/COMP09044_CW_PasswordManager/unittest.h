@@ -4,6 +4,7 @@
 #include "password.h"
 #include "account.h"
 #include "datahandler.h"
+#include "hashmap.h"
 #include <QDebug>
 #include <QException>
 
@@ -14,6 +15,7 @@ class UnitTest
         void password_generation();
         void account_creation();
         void data_handling();
+        void hash_map();
 
 };
 

@@ -73,3 +73,31 @@ void UnitTest::data_handling(){
 
 }
 
+void UnitTest::hash_map(){
+    Hashmap hm;
+
+    try{
+        qDebug() << hm.hash(32) << Qt::endl;
+        qDebug() << hm.hash(32) << Qt::endl;
+
+        qDebug() << hm.hash(256) << Qt::endl;
+        qDebug() << hm.hash(256) << Qt::endl;
+
+
+        qDebug() << hm.hash(10) << Qt::endl;
+        qDebug() << hm.hash(10) << Qt::endl;
+
+        qDebug() << hm.hash(805) << Qt::endl;
+        qDebug() << hm.hash(805) << Qt::endl;
+
+        qDebug() << hm.hash(900) << Qt::endl;
+        qDebug() << hm.hash(900) << Qt::endl;
+
+        qDebug() << "Is the hashmap empty?" << hm.isEmpty() << Qt::endl;
+
+    }catch(QException e){
+        qDebug() << "Unit Test Failed: " << e.what() << Qt::endl;
+    }
+
+}
+

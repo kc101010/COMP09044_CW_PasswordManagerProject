@@ -11,6 +11,7 @@ CONFIG += c++11 crypto
 SOURCES += \
     account.cpp \
     datahandler.cpp \
+    hashmap.cpp \
     main.cpp \
     mainwindow.cpp \
     password.cpp \
@@ -19,6 +20,7 @@ SOURCES += \
 HEADERS += \
     account.h \
     datahandler.h \
+    hashmap.h \
     mainwindow.h \
     password.h \
     unittest.h

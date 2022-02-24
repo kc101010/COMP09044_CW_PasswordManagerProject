@@ -11,7 +11,8 @@ int main(int argc, char *argv[])
     //run various unit tests
     //UnitTest().password_generation();
     //UnitTest().account_creation();
-    UnitTest().data_handling();
+    //UnitTest().data_handling();
+    UnitTest().hash_map();
 
     w.show();
     return a.exec();

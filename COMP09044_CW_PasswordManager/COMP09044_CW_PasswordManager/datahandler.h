@@ -18,8 +18,10 @@ class DataHandler
     private:
         QSqlDatabase db;   //stores database to be used
         QFile DataFile;    //stores database file for encryption/decryption
+        QCA::Initializer init;
     public:
         DataHandler();
+        ~DataHandler();
         void saveAccount(Account *acc_save);    //saves a new account to database
         void deleteAccount(Account *acc_del);   //deletes account from database
         void editAccount(Account *acc_edit);    //edits existing account information

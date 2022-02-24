@@ -4,6 +4,8 @@
 //constructor sets up database info and DataFile for encryption/decryption
 DataHandler::DataHandler(){
     try{
+        //Decrypt the database to allow access
+        //DecryptDB();
         //create a new database, set its name for db and encryption functionality
         db = QSqlDatabase::addDatabase("QSQLITE");
         db.setDatabaseName("p_program.sqlite");
@@ -22,6 +24,11 @@ DataHandler::DataHandler(){
         qDebug() << e.text() << e.type() << Qt::endl;
     }
 
+}
+
+DataHandler::~DataHandler(){
+    //Encrypt database
+    //EncryptDB();
 }
 
 void DataHandler::saveAccount(Account *acc_save){
