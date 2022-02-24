@@ -10,6 +10,7 @@ My coursework for COMP09044 'Algorithms &amp; Collections' @ University of the W
 
 # Authored by Project Developer - Kyle Christie (kc101010)
 
-https://github.com/kc101010
-https://kc101010.itch.io
-https://www.sololearn.com/Profile/4051735
++ https://twitter.com/KyleChr00194607
++ https://github.com/kc101010
++ https://kc101010.itch.io
++ https://www.sololearn.com/Profile/4051735
