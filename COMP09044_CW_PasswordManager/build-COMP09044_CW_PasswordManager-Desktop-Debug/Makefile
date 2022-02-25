@@ -54,14 +54,12 @@ OBJECTS_DIR   = ./
 
 SOURCES       = ../COMP09044_CW_PasswordManager/account.cpp \
 		../COMP09044_CW_PasswordManager/datahandler.cpp \
-		../COMP09044_CW_PasswordManager/hashmap.cpp \
 		../COMP09044_CW_PasswordManager/main.cpp \
 		../COMP09044_CW_PasswordManager/mainwindow.cpp \
 		../COMP09044_CW_PasswordManager/password.cpp \
 		../COMP09044_CW_PasswordManager/unittest.cpp moc_mainwindow.cpp
 OBJECTS       = account.o \
 		datahandler.o \
-		hashmap.o \
 		main.o \
 		mainwindow.o \
 		password.o \
@@ -149,12 +147,10 @@ DIST          = /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/spec_pre.prf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/lex.prf \
 		../COMP09044_CW_PasswordManager/COMP09044_CW_PasswordManager.pro ../COMP09044_CW_PasswordManager/account.h \
 		../COMP09044_CW_PasswordManager/datahandler.h \
-		../COMP09044_CW_PasswordManager/hashmap.h \
 		../COMP09044_CW_PasswordManager/mainwindow.h \
 		../COMP09044_CW_PasswordManager/password.h \
 		../COMP09044_CW_PasswordManager/unittest.h ../COMP09044_CW_PasswordManager/account.cpp \
 		../COMP09044_CW_PasswordManager/datahandler.cpp \
-		../COMP09044_CW_PasswordManager/hashmap.cpp \
 		../COMP09044_CW_PasswordManager/main.cpp \
 		../COMP09044_CW_PasswordManager/mainwindow.cpp \
 		../COMP09044_CW_PasswordManager/password.cpp \
@@ -348,8 +344,8 @@ distdir: FORCE
 	@test -d $(DISTDIR) || mkdir -p $(DISTDIR)
 	$(COPY_FILE) --parents $(DIST) $(DISTDIR)/
 	$(COPY_FILE) --parents /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/data/dummy.cpp $(DISTDIR)/
-	$(COPY_FILE) --parents ../COMP09044_CW_PasswordManager/account.h ../COMP09044_CW_PasswordManager/datahandler.h ../COMP09044_CW_PasswordManager/hashmap.h ../COMP09044_CW_PasswordManager/mainwindow.h ../COMP09044_CW_PasswordManager/password.h ../COMP09044_CW_PasswordManager/unittest.h $(DISTDIR)/
-	$(COPY_FILE) --parents ../COMP09044_CW_PasswordManager/account.cpp ../COMP09044_CW_PasswordManager/datahandler.cpp ../COMP09044_CW_PasswordManager/hashmap.cpp ../COMP09044_CW_PasswordManager/main.cpp ../COMP09044_CW_PasswordManager/mainwindow.cpp ../COMP09044_CW_PasswordManager/password.cpp ../COMP09044_CW_PasswordManager/unittest.cpp $(DISTDIR)/
+	$(COPY_FILE) --parents ../COMP09044_CW_PasswordManager/account.h ../COMP09044_CW_PasswordManager/datahandler.h ../COMP09044_CW_PasswordManager/mainwindow.h ../COMP09044_CW_PasswordManager/password.h ../COMP09044_CW_PasswordManager/unittest.h $(DISTDIR)/
+	$(COPY_FILE) --parents ../COMP09044_CW_PasswordManager/account.cpp ../COMP09044_CW_PasswordManager/datahandler.cpp ../COMP09044_CW_PasswordManager/main.cpp ../COMP09044_CW_PasswordManager/mainwindow.cpp ../COMP09044_CW_PasswordManager/password.cpp ../COMP09044_CW_PasswordManager/unittest.cpp $(DISTDIR)/
 	$(COPY_FILE) --parents ../COMP09044_CW_PasswordManager/mainwindow.ui $(DISTDIR)/
 
 
@@ -418,15 +414,11 @@ datahandler.o: ../COMP09044_CW_PasswordManager/datahandler.cpp ../COMP09044_CW_P
 		../COMP09044_CW_PasswordManager/account.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o datahandler.o ../COMP09044_CW_PasswordManager/datahandler.cpp
 
-hashmap.o: ../COMP09044_CW_PasswordManager/hashmap.cpp ../COMP09044_CW_PasswordManager/hashmap.h
-	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o hashmap.o ../COMP09044_CW_PasswordManager/hashmap.cpp
-
 main.o: ../COMP09044_CW_PasswordManager/main.cpp ../COMP09044_CW_PasswordManager/mainwindow.h \
 		../COMP09044_CW_PasswordManager/unittest.h \
 		../COMP09044_CW_PasswordManager/password.h \
 		../COMP09044_CW_PasswordManager/account.h \
-		../COMP09044_CW_PasswordManager/datahandler.h \
-		../COMP09044_CW_PasswordManager/hashmap.h
+		../COMP09044_CW_PasswordManager/datahandler.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o main.o ../COMP09044_CW_PasswordManager/main.cpp
 
 mainwindow.o: ../COMP09044_CW_PasswordManager/mainwindow.cpp ../COMP09044_CW_PasswordManager/mainwindow.h \
@@ -439,8 +431,7 @@ password.o: ../COMP09044_CW_PasswordManager/password.cpp ../COMP09044_CW_Passwor
 unittest.o: ../COMP09044_CW_PasswordManager/unittest.cpp ../COMP09044_CW_PasswordManager/unittest.h \
 		../COMP09044_CW_PasswordManager/password.h \
 		../COMP09044_CW_PasswordManager/account.h \
-		../COMP09044_CW_PasswordManager/datahandler.h \
-		../COMP09044_CW_PasswordManager/hashmap.h
+		../COMP09044_CW_PasswordManager/datahandler.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o unittest.o ../COMP09044_CW_PasswordManager/unittest.cpp
 
 moc_mainwindow.o: moc_mainwindow.cpp 

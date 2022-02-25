@@ -4,7 +4,6 @@
 #include "password.h"
 #include "account.h"
 #include "datahandler.h"
-#include "hashmap.h"
 #include <QDebug>
 #include <QException>
 

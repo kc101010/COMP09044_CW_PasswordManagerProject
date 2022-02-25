@@ -12,7 +12,7 @@ int main(int argc, char *argv[])
     //UnitTest().password_generation();
     //UnitTest().account_creation();
     //UnitTest().data_handling();
-    UnitTest().hash_map();
+
 
     w.show();
     return a.exec();
