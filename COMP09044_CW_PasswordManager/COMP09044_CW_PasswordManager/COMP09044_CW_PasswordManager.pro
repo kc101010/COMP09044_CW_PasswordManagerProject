@@ -19,6 +19,7 @@ SOURCES += \
 HEADERS += \
     account.h \
     datahandler.h \
+    hashtable.h \
     mainwindow.h \
     password.h \
     unittest.h

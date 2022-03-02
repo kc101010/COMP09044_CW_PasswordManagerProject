@@ -73,4 +73,42 @@ void UnitTest::data_handling(){
 
 }
 
+void UnitTest::hash_table(){
+    Password pw;
+    QDate today = QDate::currentDate();
+    pw.password_builder(16);
+    HashTable<int, Account*>* h = new HashTable<int, Account*>;
+    Account *julia = new Account("julia1131", pw.get_password(), "jules@hotmail.com", today);
+    julia->set_last_use(today);
+
+
+    try{
+
+        h->insert(0, julia);
+        h->insert(699, julia);
+        h->insert(155, julia);
+        h->insert(890, julia);
+        h->insert(601, julia);
+        h->insert(1155, julia);
+
+        qDebug() << h->is_empty() << Qt::endl;
+
+        h->print_table();
+
+        qDebug() << h->search(699) << Qt::endl;
+
+        h->remove(601);
+
+        h->print_table();
+
+
+        delete julia;
+        delete h;
+    }catch(QException e){
+        qDebug() << "Unit Test Failed: " << e.what() << Qt::endl;
+    }
+
+
+
+}
 
