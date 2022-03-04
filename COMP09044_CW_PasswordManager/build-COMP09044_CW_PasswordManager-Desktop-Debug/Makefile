@@ -53,12 +53,14 @@ OBJECTS_DIR   = ./
 ####### Files
 
 SOURCES       = ../COMP09044_CW_PasswordManager/account.cpp \
+		../COMP09044_CW_PasswordManager/accountdirectory.cpp \
 		../COMP09044_CW_PasswordManager/datahandler.cpp \
 		../COMP09044_CW_PasswordManager/main.cpp \
 		../COMP09044_CW_PasswordManager/mainwindow.cpp \
 		../COMP09044_CW_PasswordManager/password.cpp \
 		../COMP09044_CW_PasswordManager/unittest.cpp moc_mainwindow.cpp
 OBJECTS       = account.o \
+		accountdirectory.o \
 		datahandler.o \
 		main.o \
 		mainwindow.o \
@@ -146,11 +148,13 @@ DIST          = /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/spec_pre.prf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/yacc.prf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/lex.prf \
 		../COMP09044_CW_PasswordManager/COMP09044_CW_PasswordManager.pro ../COMP09044_CW_PasswordManager/account.h \
+		../COMP09044_CW_PasswordManager/accountdirectory.h \
 		../COMP09044_CW_PasswordManager/datahandler.h \
 		../COMP09044_CW_PasswordManager/hashtable.h \
 		../COMP09044_CW_PasswordManager/mainwindow.h \
 		../COMP09044_CW_PasswordManager/password.h \
 		../COMP09044_CW_PasswordManager/unittest.h ../COMP09044_CW_PasswordManager/account.cpp \
+		../COMP09044_CW_PasswordManager/accountdirectory.cpp \
 		../COMP09044_CW_PasswordManager/datahandler.cpp \
 		../COMP09044_CW_PasswordManager/main.cpp \
 		../COMP09044_CW_PasswordManager/mainwindow.cpp \
@@ -345,8 +349,8 @@ distdir: FORCE
 	@test -d $(DISTDIR) || mkdir -p $(DISTDIR)
 	$(COPY_FILE) --parents $(DIST) $(DISTDIR)/
 	$(COPY_FILE) --parents /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/data/dummy.cpp $(DISTDIR)/
-	$(COPY_FILE) --parents ../COMP09044_CW_PasswordManager/account.h ../COMP09044_CW_PasswordManager/datahandler.h ../COMP09044_CW_PasswordManager/hashtable.h ../COMP09044_CW_PasswordManager/mainwindow.h ../COMP09044_CW_PasswordManager/password.h ../COMP09044_CW_PasswordManager/unittest.h $(DISTDIR)/
-	$(COPY_FILE) --parents ../COMP09044_CW_PasswordManager/account.cpp ../COMP09044_CW_PasswordManager/datahandler.cpp ../COMP09044_CW_PasswordManager/main.cpp ../COMP09044_CW_PasswordManager/mainwindow.cpp ../COMP09044_CW_PasswordManager/password.cpp ../COMP09044_CW_PasswordManager/unittest.cpp $(DISTDIR)/
+	$(COPY_FILE) --parents ../COMP09044_CW_PasswordManager/account.h ../COMP09044_CW_PasswordManager/accountdirectory.h ../COMP09044_CW_PasswordManager/datahandler.h ../COMP09044_CW_PasswordManager/hashtable.h ../COMP09044_CW_PasswordManager/mainwindow.h ../COMP09044_CW_PasswordManager/password.h ../COMP09044_CW_PasswordManager/unittest.h $(DISTDIR)/
+	$(COPY_FILE) --parents ../COMP09044_CW_PasswordManager/account.cpp ../COMP09044_CW_PasswordManager/accountdirectory.cpp ../COMP09044_CW_PasswordManager/datahandler.cpp ../COMP09044_CW_PasswordManager/main.cpp ../COMP09044_CW_PasswordManager/mainwindow.cpp ../COMP09044_CW_PasswordManager/password.cpp ../COMP09044_CW_PasswordManager/unittest.cpp $(DISTDIR)/
 	$(COPY_FILE) --parents ../COMP09044_CW_PasswordManager/mainwindow.ui $(DISTDIR)/
 
 
@@ -410,6 +414,11 @@ compiler_clean: compiler_moc_predefs_clean compiler_moc_header_clean compiler_ui
 
 account.o: ../COMP09044_CW_PasswordManager/account.cpp ../COMP09044_CW_PasswordManager/account.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o account.o ../COMP09044_CW_PasswordManager/account.cpp
+
+accountdirectory.o: ../COMP09044_CW_PasswordManager/accountdirectory.cpp ../COMP09044_CW_PasswordManager/accountdirectory.h \
+		../COMP09044_CW_PasswordManager/account.h \
+		../COMP09044_CW_PasswordManager/hashtable.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o accountdirectory.o ../COMP09044_CW_PasswordManager/accountdirectory.cpp
 
 datahandler.o: ../COMP09044_CW_PasswordManager/datahandler.cpp ../COMP09044_CW_PasswordManager/datahandler.h \
 		../COMP09044_CW_PasswordManager/account.h

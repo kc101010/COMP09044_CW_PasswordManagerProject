@@ -10,6 +10,7 @@ CONFIG += c++11 crypto
 
 SOURCES += \
     account.cpp \
+    accountdirectory.cpp \
     datahandler.cpp \
     main.cpp \
     mainwindow.cpp \
@@ -18,6 +19,7 @@ SOURCES += \
 
 HEADERS += \
     account.h \
+    accountdirectory.h \
     datahandler.h \
     hashtable.h \
     mainwindow.h \
