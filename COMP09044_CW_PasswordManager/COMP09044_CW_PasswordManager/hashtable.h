@@ -11,7 +11,7 @@ template <typename Key, typename Value> class HashTable
 
 private:
 
-    const static qint32 max_size = 10;
+    const static qint32 max_size = 100;
 
     QVector<Value> vals;
     QVector<Key> keys;
@@ -55,11 +55,8 @@ public:
         }
     }
 
-    void print_table(){
-        for(int i {0}; i < max_size; i++){
-            qDebug() << "Key " << i << ": " << keys.at(i) << " , " << "Value" << ": " << vals.at(i) << Qt::endl;
-        }
-
+    Value at(int index){
+       return vals.at(index);
     }
 
     bool is_empty(){
@@ -72,6 +69,10 @@ public:
         }
 
         return state;
+    }
+
+    qint32 size(){
+        return max_size;
     }
 };
 

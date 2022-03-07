@@ -3,6 +3,7 @@
 
 #include "password.h"
 #include "account.h"
+#include "accountdirectory.h"
 #include "datahandler.h"
 #include "hashtable.h"
 #include <QDebug>
@@ -16,6 +17,7 @@ class UnitTest
         void account_creation();
         void data_handling();
         void hash_table();
+        void account_directory();
 
 };
 

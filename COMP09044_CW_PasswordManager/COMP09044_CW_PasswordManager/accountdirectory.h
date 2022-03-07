@@ -2,6 +2,7 @@
 #define ACCOUNTDIRECTORY_H
 
 #include "account.h"
+#include "datahandler.h"
 #include "hashtable.h"
 #include <QString>
 
@@ -9,6 +10,7 @@ class AccountDirectory
 {
 private:
     HashTable<int, Account*> AccDirectory;
+    DataHandler data;
 
 public:
     AccountDirectory();
@@ -17,7 +19,9 @@ public:
     void new_account();
     void delete_account();
     void modify_account();
-    qint32 number_accounts();
+    Account* at(int index);
+    qint32 size();
+
 };
 
 #endif // ACCOUNTDIRECTORY_H

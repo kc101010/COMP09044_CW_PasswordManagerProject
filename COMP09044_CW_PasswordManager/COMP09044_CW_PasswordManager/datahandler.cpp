@@ -31,6 +31,46 @@ DataHandler::~DataHandler(){
     //EncryptDB();
 }
 
+HashTable<int, Account*> DataHandler::readAccountDirectory(){
+    HashTable<int, Account*> data;
+
+    try{
+        //open database
+        db.open();
+
+        //prepare statment to read from database
+        QSqlQuery stm;
+        stm.prepare("SELECT username, password, email, creation_date, last_used FROM accounts ");
+
+        stm.exec();
+
+        //store each account within hash table
+        while(stm.next()){
+            Account* temp = new Account(
+                        stm.value(0).toString(),
+                        stm.value(1).toString(),
+                        stm.value(2).toString(),
+                        stm.value(3).toDate()
+                                            );
+            temp->set_last_use(stm.value(4).toDate());
+
+            data.insert(stm.value(0).toInt(), temp);
+
+        }
+
+
+        //close db access
+        stm.finish();
+        db.close();
+
+    }catch(QSqlError e){
+        //print exception info
+        qDebug() << e.text() << e.type() << Qt::endl;
+    }
+
+    return data;
+}
+
 void DataHandler::saveAccount(Account *acc_save){
     try{
         //open new connnection to database and declare new query

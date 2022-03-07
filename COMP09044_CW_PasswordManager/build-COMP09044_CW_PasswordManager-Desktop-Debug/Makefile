@@ -387,6 +387,10 @@ compiler_moc_header_make_all: moc_mainwindow.cpp
 compiler_moc_header_clean:
 	-$(DEL_FILE) moc_mainwindow.cpp
 moc_mainwindow.cpp: ../COMP09044_CW_PasswordManager/mainwindow.h \
+		../COMP09044_CW_PasswordManager/accountdirectory.h \
+		../COMP09044_CW_PasswordManager/account.h \
+		../COMP09044_CW_PasswordManager/datahandler.h \
+		../COMP09044_CW_PasswordManager/hashtable.h \
 		moc_predefs.h \
 		/usr/lib/qt5/bin/moc
 	/usr/lib/qt5/bin/moc $(DEFINES) --include '/mnt/15f210d7-aa4f-4ea8-a4b3-2bd52aeba8fc/Programming/Uni/Algorithms & Collections/PROJECT/COMP09044_CW_PasswordManager/build-COMP09044_CW_PasswordManager-Desktop-Debug/moc_predefs.h' -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I'/mnt/15f210d7-aa4f-4ea8-a4b3-2bd52aeba8fc/Programming/Uni/Algorithms & Collections/PROJECT/COMP09044_CW_PasswordManager/COMP09044_CW_PasswordManager' -I/usr/include/x86_64-linux-gnu/qt5/Qca-qt5/QtCrypto -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtWidgets -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5/QtSql -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I. -I/usr/include/c++/10 -I/usr/include/x86_64-linux-gnu/c++/10 -I/usr/include/c++/10/backward -I/usr/lib/gcc/x86_64-linux-gnu/10/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include ../COMP09044_CW_PasswordManager/mainwindow.h -o moc_mainwindow.cpp
@@ -417,22 +421,29 @@ account.o: ../COMP09044_CW_PasswordManager/account.cpp ../COMP09044_CW_PasswordM
 
 accountdirectory.o: ../COMP09044_CW_PasswordManager/accountdirectory.cpp ../COMP09044_CW_PasswordManager/accountdirectory.h \
 		../COMP09044_CW_PasswordManager/account.h \
+		../COMP09044_CW_PasswordManager/datahandler.h \
 		../COMP09044_CW_PasswordManager/hashtable.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o accountdirectory.o ../COMP09044_CW_PasswordManager/accountdirectory.cpp
 
 datahandler.o: ../COMP09044_CW_PasswordManager/datahandler.cpp ../COMP09044_CW_PasswordManager/datahandler.h \
-		../COMP09044_CW_PasswordManager/account.h
+		../COMP09044_CW_PasswordManager/account.h \
+		../COMP09044_CW_PasswordManager/hashtable.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o datahandler.o ../COMP09044_CW_PasswordManager/datahandler.cpp
 
 main.o: ../COMP09044_CW_PasswordManager/main.cpp ../COMP09044_CW_PasswordManager/mainwindow.h \
-		../COMP09044_CW_PasswordManager/unittest.h \
-		../COMP09044_CW_PasswordManager/password.h \
+		../COMP09044_CW_PasswordManager/accountdirectory.h \
 		../COMP09044_CW_PasswordManager/account.h \
 		../COMP09044_CW_PasswordManager/datahandler.h \
-		../COMP09044_CW_PasswordManager/hashtable.h
+		../COMP09044_CW_PasswordManager/hashtable.h \
+		../COMP09044_CW_PasswordManager/unittest.h \
+		../COMP09044_CW_PasswordManager/password.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o main.o ../COMP09044_CW_PasswordManager/main.cpp
 
 mainwindow.o: ../COMP09044_CW_PasswordManager/mainwindow.cpp ../COMP09044_CW_PasswordManager/mainwindow.h \
+		../COMP09044_CW_PasswordManager/accountdirectory.h \
+		../COMP09044_CW_PasswordManager/account.h \
+		../COMP09044_CW_PasswordManager/datahandler.h \
+		../COMP09044_CW_PasswordManager/hashtable.h \
 		ui_mainwindow.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o mainwindow.o ../COMP09044_CW_PasswordManager/mainwindow.cpp
 
@@ -442,6 +453,7 @@ password.o: ../COMP09044_CW_PasswordManager/password.cpp ../COMP09044_CW_Passwor
 unittest.o: ../COMP09044_CW_PasswordManager/unittest.cpp ../COMP09044_CW_PasswordManager/unittest.h \
 		../COMP09044_CW_PasswordManager/password.h \
 		../COMP09044_CW_PasswordManager/account.h \
+		../COMP09044_CW_PasswordManager/accountdirectory.h \
 		../COMP09044_CW_PasswordManager/datahandler.h \
 		../COMP09044_CW_PasswordManager/hashtable.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o unittest.o ../COMP09044_CW_PasswordManager/unittest.cpp

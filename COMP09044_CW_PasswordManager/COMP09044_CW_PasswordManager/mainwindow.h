@@ -2,6 +2,7 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
+#include "accountdirectory.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -13,9 +14,11 @@ class MainWindow : public QMainWindow
 
 public:
     MainWindow(QWidget *parent = nullptr);
+    void setAccountList();
     ~MainWindow();
 
 private:
     Ui::MainWindow *ui;
+    AccountDirectory Accounts;
 };
 #endif // MAINWINDOW_H

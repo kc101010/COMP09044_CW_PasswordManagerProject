@@ -13,12 +13,13 @@
 #include <QtWidgets/QAction>
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QComboBox>
+#include <QtWidgets/QHeaderView>
 #include <QtWidgets/QLabel>
 #include <QtWidgets/QMainWindow>
 #include <QtWidgets/QMenu>
 #include <QtWidgets/QMenuBar>
-#include <QtWidgets/QScrollArea>
 #include <QtWidgets/QStatusBar>
+#include <QtWidgets/QTableWidget>
 #include <QtWidgets/QTextEdit>
 #include <QtWidgets/QWidget>
 
@@ -35,8 +36,11 @@ public:
     QLabel *Label_MainMenu;
     QTextEdit *input_Search;
     QComboBox *input_Sort;
-    QScrollArea *AccountListing;
-    QWidget *scrollAreaWidgetContents;
+    QTableWidget *tableWidget;
+    QLabel *label;
+    QLabel *label_3;
+    QLabel *label_4;
+    QLabel *label_5;
     QMenuBar *menubar;
     QMenu *menuFiles;
     QMenu *menuEdit;
@@ -62,6 +66,7 @@ public:
         actionExport->setObjectName(QString::fromUtf8("actionExport"));
         centralwidget = new QWidget(MainWindow);
         centralwidget->setObjectName(QString::fromUtf8("centralwidget"));
+        centralwidget->setEnabled(true);
         Label_MainMenu = new QLabel(centralwidget);
         Label_MainMenu->setObjectName(QString::fromUtf8("Label_MainMenu"));
         Label_MainMenu->setGeometry(QRect(20, 10, 65, 31));
@@ -75,22 +80,39 @@ public:
         input_Search->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
         input_Search->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
         input_Search->setCursorWidth(0);
+        input_Search->setTextInteractionFlags(Qt::LinksAccessibleByKeyboard|Qt::LinksAccessibleByMouse|Qt::TextBrowserInteraction|Qt::TextEditable|Qt::TextEditorInteraction|Qt::TextSelectableByKeyboard|Qt::TextSelectableByMouse);
         input_Sort = new QComboBox(centralwidget);
+        input_Sort->addItem(QString());
         input_Sort->addItem(QString());
         input_Sort->addItem(QString());
         input_Sort->setObjectName(QString::fromUtf8("input_Sort"));
         input_Sort->setGeometry(QRect(680, 20, 111, 21));
-        AccountListing = new QScrollArea(centralwidget);
-        AccountListing->setObjectName(QString::fromUtf8("AccountListing"));
-        AccountListing->setGeometry(QRect(20, 60, 761, 491));
-        AccountListing->setFrameShape(QFrame::Box);
-        AccountListing->setFrameShadow(QFrame::Sunken);
-        AccountListing->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOn);
-        AccountListing->setWidgetResizable(false);
-        scrollAreaWidgetContents = new QWidget();
-        scrollAreaWidgetContents->setObjectName(QString::fromUtf8("scrollAreaWidgetContents"));
-        scrollAreaWidgetContents->setGeometry(QRect(0, 0, 743, 487));
-        AccountListing->setWidget(scrollAreaWidgetContents);
+        tableWidget = new QTableWidget(centralwidget);
+        if (tableWidget->columnCount() < 4)
+            tableWidget->setColumnCount(4);
+        if (tableWidget->rowCount() < 10)
+            tableWidget->setRowCount(10);
+        tableWidget->setObjectName(QString::fromUtf8("tableWidget"));
+        tableWidget->setGeometry(QRect(10, 80, 771, 451));
+        tableWidget->setEditTriggers(QAbstractItemView::NoEditTriggers);
+        tableWidget->setShowGrid(false);
+        tableWidget->setRowCount(10);
+        tableWidget->setColumnCount(4);
+        tableWidget->horizontalHeader()->setVisible(false);
+        tableWidget->horizontalHeader()->setCascadingSectionResizes(false);
+        tableWidget->verticalHeader()->setVisible(false);
+        label = new QLabel(centralwidget);
+        label->setObjectName(QString::fromUtf8("label"));
+        label->setGeometry(QRect(30, 60, 71, 16));
+        label_3 = new QLabel(centralwidget);
+        label_3->setObjectName(QString::fromUtf8("label_3"));
+        label_3->setGeometry(QRect(130, 60, 65, 15));
+        label_4 = new QLabel(centralwidget);
+        label_4->setObjectName(QString::fromUtf8("label_4"));
+        label_4->setGeometry(QRect(220, 60, 91, 16));
+        label_5 = new QLabel(centralwidget);
+        label_5->setObjectName(QString::fromUtf8("label_5"));
+        label_5->setGeometry(QRect(330, 60, 91, 16));
         MainWindow->setCentralWidget(centralwidget);
         menubar = new QMenuBar(MainWindow);
         menubar->setObjectName(QString::fromUtf8("menubar"));
@@ -137,11 +159,15 @@ public:
         actionExport->setText(QCoreApplication::translate("MainWindow", "Export", nullptr));
         Label_MainMenu->setText(QCoreApplication::translate("MainWindow", "Password Prototype", nullptr));
         input_Search->setPlaceholderText(QCoreApplication::translate("MainWindow", "Search ", nullptr));
-        input_Sort->setItemText(0, QCoreApplication::translate("MainWindow", "Ascending", nullptr));
-        input_Sort->setItemText(1, QCoreApplication::translate("MainWindow", "Descending", nullptr));
+        input_Sort->setItemText(0, QCoreApplication::translate("MainWindow", "Last Used", nullptr));
+        input_Sort->setItemText(1, QCoreApplication::translate("MainWindow", "Ascending (Created)", nullptr));
+        input_Sort->setItemText(2, QCoreApplication::translate("MainWindow", "Descending (Created)", nullptr));
 
-        input_Sort->setCurrentText(QString());
         input_Sort->setPlaceholderText(QCoreApplication::translate("MainWindow", "Sort: TYPE", nullptr));
+        label->setText(QCoreApplication::translate("MainWindow", "Username", nullptr));
+        label_3->setText(QCoreApplication::translate("MainWindow", "Email", nullptr));
+        label_4->setText(QCoreApplication::translate("MainWindow", "Date created", nullptr));
+        label_5->setText(QCoreApplication::translate("MainWindow", "Last Used", nullptr));
         menuFiles->setTitle(QCoreApplication::translate("MainWindow", "Files", nullptr));
         menuEdit->setTitle(QCoreApplication::translate("MainWindow", "Edit", nullptr));
         menuOptions->setTitle(QCoreApplication::translate("MainWindow", "Options", nullptr));

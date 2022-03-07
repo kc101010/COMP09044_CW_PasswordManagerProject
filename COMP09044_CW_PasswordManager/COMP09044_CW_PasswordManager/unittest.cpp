@@ -93,13 +93,13 @@ void UnitTest::hash_table(){
 
         qDebug() << h->is_empty() << Qt::endl;
 
-        h->print_table();
+        //h->print_table();
 
         qDebug() << h->search(699) << Qt::endl;
 
         h->remove(601);
 
-        h->print_table();
+        //h->print_table();
 
 
         delete julia;
@@ -108,7 +108,9 @@ void UnitTest::hash_table(){
         qDebug() << "Unit Test Failed: " << e.what() << Qt::endl;
     }
 
+}
 
-
+void UnitTest::account_directory(){
+    AccountDirectory dir;
 }
 
