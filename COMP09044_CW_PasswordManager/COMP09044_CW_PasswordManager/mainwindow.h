@@ -2,6 +2,7 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
+#include <QTableWidget>
 #include "accountdirectory.h"
 
 QT_BEGIN_NAMESPACE
@@ -16,6 +17,9 @@ public:
     MainWindow(QWidget *parent = nullptr);
     void setAccountList();
     ~MainWindow();
+
+private slots:
+    void on_List_accounts_itemDoubleClicked(QTableWidgetItem *item);
 
 private:
     Ui::MainWindow *ui;

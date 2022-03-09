@@ -1,8 +1,7 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
 
-#include <QTableWidget>
-#include <QPushButton>
+
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
@@ -14,7 +13,7 @@ MainWindow::MainWindow(QWidget *parent)
 
 void MainWindow::setAccountList(){
 
-    QTableWidget* tmp = centralWidget()->findChild<QTableWidget*>("tableWidget");
+    QTableWidget* tmp = centralWidget()->findChild<QTableWidget*>("List_accounts");
     tmp->setRowCount(Accounts.size());
 
     QTableWidgetItem* it;
@@ -42,9 +41,33 @@ void MainWindow::setAccountList(){
     }
 }
 
-
 MainWindow::~MainWindow()
 {
     delete ui;
 }
 
+
+
+void MainWindow::on_List_accounts_itemDoubleClicked(QTableWidgetItem *item)
+{
+    //QTableWidget* tmp = centralWidget()->findChild<QTableWidget*>("List_accounts");
+
+    /*select all columns within the current row
+    for(int i{0}; i < tmp->columnCount(); i++){
+        //print column data within row
+        qDebug() << tmp->item(item->row(), i)->text();
+    }*/
+
+    //user double clicks account to edit
+    qDebug() << "User clicked: " << item->row();
+
+    //get the current row and pull the data from the hash table
+    Account* acc_tmp = Accounts.at(item->row());
+    qDebug() << acc_tmp->get_username();
+    qDebug() << acc_tmp->get_email();
+    qDebug() << acc_tmp->get_date_created();
+    qDebug() << acc_tmp->get_last_use() << Qt::endl;
+
+    //FUTURE/To-do: open data in new account form to allow user editing
+
+}

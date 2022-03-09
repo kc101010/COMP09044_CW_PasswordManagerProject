@@ -44,14 +44,23 @@
      <rect>
       <x>100</x>
       <y>20</y>
-      <width>571</width>
+      <width>511</width>
       <height>21</height>
      </rect>
+    </property>
+    <property name="sizePolicy">
+     <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+      <horstretch>0</horstretch>
+      <verstretch>0</verstretch>
+     </sizepolicy>
     </property>
     <property name="font">
      <font>
       <pointsize>8</pointsize>
      </font>
+    </property>
+    <property name="lineWidth">
+     <number>1</number>
     </property>
     <property name="verticalScrollBarPolicy">
      <enum>Qt::ScrollBarAlwaysOff</enum>
@@ -59,8 +68,17 @@
     <property name="horizontalScrollBarPolicy">
      <enum>Qt::ScrollBarAlwaysOff</enum>
     </property>
+    <property name="tabChangesFocus">
+     <bool>false</bool>
+    </property>
+    <property name="lineWrapMode">
+     <enum>QTextEdit::NoWrap</enum>
+    </property>
+    <property name="overwriteMode">
+     <bool>false</bool>
+    </property>
     <property name="cursorWidth">
-     <number>0</number>
+     <number>1</number>
     </property>
     <property name="textInteractionFlags">
      <set>Qt::LinksAccessibleByKeyboard|Qt::LinksAccessibleByMouse|Qt::TextBrowserInteraction|Qt::TextEditable|Qt::TextEditorInteraction|Qt::TextSelectableByKeyboard|Qt::TextSelectableByMouse</set>
@@ -72,9 +90,9 @@
    <widget class="QComboBox" name="input_Sort">
     <property name="geometry">
      <rect>
-      <x>680</x>
+      <x>660</x>
       <y>20</y>
-      <width>111</width>
+      <width>121</width>
       <height>21</height>
      </rect>
     </property>
@@ -83,21 +101,26 @@
     </property>
     <item>
      <property name="text">
+      <string>Alphabetical</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Earliest Created</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
       <string>Last Used</string>
      </property>
     </item>
     <item>
      <property name="text">
-      <string>Ascending (Created)</string>
-     </property>
-    </item>
-    <item>
-     <property name="text">
-      <string>Descending (Created)</string>
+      <string>Most Recently Created</string>
      </property>
     </item>
    </widget>
-   <widget class="QTableWidget" name="tableWidget">
+   <widget class="QTableWidget" name="List_accounts">
     <property name="geometry">
      <rect>
       <x>10</x>
@@ -106,8 +129,14 @@
       <height>451</height>
      </rect>
     </property>
+    <property name="sizeAdjustPolicy">
+     <enum>QAbstractScrollArea::AdjustToContentsOnFirstShow</enum>
+    </property>
     <property name="editTriggers">
      <set>QAbstractItemView::NoEditTriggers</set>
+    </property>
+    <property name="dragEnabled">
+     <bool>false</bool>
     </property>
     <property name="showGrid">
      <bool>false</bool>
@@ -142,7 +171,7 @@
     <column/>
     <column/>
    </widget>
-   <widget class="QLabel" name="label">
+   <widget class="QLabel" name="label_uname">
     <property name="geometry">
      <rect>
       <x>30</x>
@@ -155,7 +184,7 @@
      <string>Username</string>
     </property>
    </widget>
-   <widget class="QLabel" name="label_3">
+   <widget class="QLabel" name="label_email">
     <property name="geometry">
      <rect>
       <x>130</x>
@@ -168,7 +197,7 @@
      <string>Email</string>
     </property>
    </widget>
-   <widget class="QLabel" name="label_4">
+   <widget class="QLabel" name="label_date_created">
     <property name="geometry">
      <rect>
       <x>220</x>
@@ -181,7 +210,7 @@
      <string>Date created</string>
     </property>
    </widget>
-   <widget class="QLabel" name="label_5">
+   <widget class="QLabel" name="label_date_last_used">
     <property name="geometry">
      <rect>
       <x>330</x>
@@ -192,6 +221,19 @@
     </property>
     <property name="text">
      <string>Last Used</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="button_click_search">
+    <property name="geometry">
+     <rect>
+      <x>610</x>
+      <y>20</y>
+      <width>41</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
     </property>
    </widget>
   </widget>
