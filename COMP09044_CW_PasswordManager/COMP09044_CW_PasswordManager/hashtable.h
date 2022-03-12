@@ -11,7 +11,7 @@ template <typename Key, typename Value> class HashTable
 
 private:
 
-    const static qint32 max_size = 100;
+    const static qint32 max_size = 50;
 
     QVector<Value> vals;
     QVector<Key> keys;
@@ -30,7 +30,7 @@ public:
     void insert(Key key, Value val){
         int i;
 
-        for(i = hash(key); keys.at(i) != NULL; i++){
+        for(i = hash(key); keys.at(i) != 0; i++){
             if(keys.at(i) == key) break;
         }
 

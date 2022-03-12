@@ -7,21 +7,27 @@ MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::MainWindow)
 {
-
     ui->setupUi(this);
 }
 
 void MainWindow::setAccountList(){
 
+    //set temp variable to interact with account list table
     QTableWidget* tmp = centralWidget()->findChild<QTableWidget*>("List_accounts");
+    //set number of rows to number of accounts in account directory
     tmp->setRowCount(Accounts.size());
 
+    //create new widget to interact with rows within table
     QTableWidgetItem* it;
 
+    //iterate through account list
     for(int i{0}; i < Accounts.size(); i++){
+        //set current account in list
         Account* acc = Accounts.at(i);
 
-        if(acc){
+        //if an account exists and username has any length (indicating the account isn't blank)
+        if(acc && acc->get_username().size() > 0){
+            //add account details to a new row in account list
             it = new QTableWidgetItem();
             it->setData(Qt::DisplayRole, acc->get_username());
             tmp->setItem(i, 0, it);
@@ -50,14 +56,6 @@ MainWindow::~MainWindow()
 
 void MainWindow::on_List_accounts_itemDoubleClicked(QTableWidgetItem *item)
 {
-    //QTableWidget* tmp = centralWidget()->findChild<QTableWidget*>("List_accounts");
-
-    /*select all columns within the current row
-    for(int i{0}; i < tmp->columnCount(); i++){
-        //print column data within row
-        qDebug() << tmp->item(item->row(), i)->text();
-    }*/
-
     //user double clicks account to edit
     qDebug() << "User clicked: " << item->row();
 

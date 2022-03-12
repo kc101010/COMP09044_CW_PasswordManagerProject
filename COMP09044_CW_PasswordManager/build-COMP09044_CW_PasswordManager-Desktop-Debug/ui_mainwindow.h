@@ -106,7 +106,7 @@ public:
             List_accounts->setRowCount(10);
         List_accounts->setObjectName(QString::fromUtf8("List_accounts"));
         List_accounts->setGeometry(QRect(10, 80, 771, 451));
-        List_accounts->setSizeAdjustPolicy(QAbstractScrollArea::AdjustToContents);
+        List_accounts->setSizeAdjustPolicy(QAbstractScrollArea::AdjustToContentsOnFirstShow);
         List_accounts->setEditTriggers(QAbstractItemView::NoEditTriggers);
         List_accounts->setDragEnabled(false);
         List_accounts->setShowGrid(false);

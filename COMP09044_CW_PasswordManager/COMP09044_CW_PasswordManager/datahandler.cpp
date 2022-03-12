@@ -54,7 +54,8 @@ HashTable<int, Account*> DataHandler::readAccountDirectory(){
                                             );
             temp->set_last_use(stm.value(4).toDate());
 
-            data.insert(stm.value(0).toInt(), temp);
+            int key = temp->get_date_created().day() + temp->get_date_created().month();
+            data.insert(key, temp);
 
         }
 
