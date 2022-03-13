@@ -11,7 +11,6 @@ int main(int argc, char *argv[])
 
     w.setAccountList();
 
-
     //run various unit tests
     //UnitTest().password_generation();
     //UnitTest().account_creation();

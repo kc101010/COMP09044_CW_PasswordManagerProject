@@ -4,6 +4,7 @@
 #include <QMainWindow>
 #include <QTableWidget>
 #include "accountdirectory.h"
+#include "newaccount.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -20,6 +21,7 @@ public:
 
 private slots:
     void on_List_accounts_itemDoubleClicked(QTableWidgetItem *item);
+    void on_actionNew_Account_triggered();
 
 private:
     Ui::MainWindow *ui;

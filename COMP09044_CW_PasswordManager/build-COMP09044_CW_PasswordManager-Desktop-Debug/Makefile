@@ -57,16 +57,20 @@ SOURCES       = ../COMP09044_CW_PasswordManager/account.cpp \
 		../COMP09044_CW_PasswordManager/datahandler.cpp \
 		../COMP09044_CW_PasswordManager/main.cpp \
 		../COMP09044_CW_PasswordManager/mainwindow.cpp \
+		../COMP09044_CW_PasswordManager/newaccount.cpp \
 		../COMP09044_CW_PasswordManager/password.cpp \
-		../COMP09044_CW_PasswordManager/unittest.cpp moc_mainwindow.cpp
+		../COMP09044_CW_PasswordManager/unittest.cpp moc_mainwindow.cpp \
+		moc_newaccount.cpp
 OBJECTS       = account.o \
 		accountdirectory.o \
 		datahandler.o \
 		main.o \
 		mainwindow.o \
+		newaccount.o \
 		password.o \
 		unittest.o \
-		moc_mainwindow.o
+		moc_mainwindow.o \
+		moc_newaccount.o
 DIST          = /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/spec_pre.prf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/common/unix.conf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/common/linux.conf \
@@ -152,12 +156,14 @@ DIST          = /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/spec_pre.prf \
 		../COMP09044_CW_PasswordManager/datahandler.h \
 		../COMP09044_CW_PasswordManager/hashtable.h \
 		../COMP09044_CW_PasswordManager/mainwindow.h \
+		../COMP09044_CW_PasswordManager/newaccount.h \
 		../COMP09044_CW_PasswordManager/password.h \
 		../COMP09044_CW_PasswordManager/unittest.h ../COMP09044_CW_PasswordManager/account.cpp \
 		../COMP09044_CW_PasswordManager/accountdirectory.cpp \
 		../COMP09044_CW_PasswordManager/datahandler.cpp \
 		../COMP09044_CW_PasswordManager/main.cpp \
 		../COMP09044_CW_PasswordManager/mainwindow.cpp \
+		../COMP09044_CW_PasswordManager/newaccount.cpp \
 		../COMP09044_CW_PasswordManager/password.cpp \
 		../COMP09044_CW_PasswordManager/unittest.cpp
 QMAKE_TARGET  = COMP09044_CW_PasswordManager
@@ -168,7 +174,7 @@ TARGET        = COMP09044_CW_PasswordManager
 first: all
 ####### Build rules
 
-COMP09044_CW_PasswordManager: ui_mainwindow.h $(OBJECTS)  
+COMP09044_CW_PasswordManager: ui_mainwindow.h ui_newaccount.h $(OBJECTS)  
 	$(LINK) $(LFLAGS) -o $(TARGET) $(OBJECTS) $(OBJCOMP) $(LIBS)
 
 Makefile: ../COMP09044_CW_PasswordManager/COMP09044_CW_PasswordManager.pro /usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++/qmake.conf /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/spec_pre.prf \
@@ -349,9 +355,9 @@ distdir: FORCE
 	@test -d $(DISTDIR) || mkdir -p $(DISTDIR)
 	$(COPY_FILE) --parents $(DIST) $(DISTDIR)/
 	$(COPY_FILE) --parents /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/data/dummy.cpp $(DISTDIR)/
-	$(COPY_FILE) --parents ../COMP09044_CW_PasswordManager/account.h ../COMP09044_CW_PasswordManager/accountdirectory.h ../COMP09044_CW_PasswordManager/datahandler.h ../COMP09044_CW_PasswordManager/hashtable.h ../COMP09044_CW_PasswordManager/mainwindow.h ../COMP09044_CW_PasswordManager/password.h ../COMP09044_CW_PasswordManager/unittest.h $(DISTDIR)/
-	$(COPY_FILE) --parents ../COMP09044_CW_PasswordManager/account.cpp ../COMP09044_CW_PasswordManager/accountdirectory.cpp ../COMP09044_CW_PasswordManager/datahandler.cpp ../COMP09044_CW_PasswordManager/main.cpp ../COMP09044_CW_PasswordManager/mainwindow.cpp ../COMP09044_CW_PasswordManager/password.cpp ../COMP09044_CW_PasswordManager/unittest.cpp $(DISTDIR)/
-	$(COPY_FILE) --parents ../COMP09044_CW_PasswordManager/mainwindow.ui $(DISTDIR)/
+	$(COPY_FILE) --parents ../COMP09044_CW_PasswordManager/account.h ../COMP09044_CW_PasswordManager/accountdirectory.h ../COMP09044_CW_PasswordManager/datahandler.h ../COMP09044_CW_PasswordManager/hashtable.h ../COMP09044_CW_PasswordManager/mainwindow.h ../COMP09044_CW_PasswordManager/newaccount.h ../COMP09044_CW_PasswordManager/password.h ../COMP09044_CW_PasswordManager/unittest.h $(DISTDIR)/
+	$(COPY_FILE) --parents ../COMP09044_CW_PasswordManager/account.cpp ../COMP09044_CW_PasswordManager/accountdirectory.cpp ../COMP09044_CW_PasswordManager/datahandler.cpp ../COMP09044_CW_PasswordManager/main.cpp ../COMP09044_CW_PasswordManager/mainwindow.cpp ../COMP09044_CW_PasswordManager/newaccount.cpp ../COMP09044_CW_PasswordManager/password.cpp ../COMP09044_CW_PasswordManager/unittest.cpp $(DISTDIR)/
+	$(COPY_FILE) --parents ../COMP09044_CW_PasswordManager/mainwindow.ui ../COMP09044_CW_PasswordManager/newaccount.ui $(DISTDIR)/
 
 
 clean: compiler_clean 
@@ -383,28 +389,38 @@ compiler_moc_predefs_clean:
 moc_predefs.h: /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/data/dummy.cpp
 	g++ -pipe -g -std=gnu++11 -Wall -Wextra -dM -E -o moc_predefs.h /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/data/dummy.cpp
 
-compiler_moc_header_make_all: moc_mainwindow.cpp
+compiler_moc_header_make_all: moc_mainwindow.cpp moc_newaccount.cpp
 compiler_moc_header_clean:
-	-$(DEL_FILE) moc_mainwindow.cpp
+	-$(DEL_FILE) moc_mainwindow.cpp moc_newaccount.cpp
 moc_mainwindow.cpp: ../COMP09044_CW_PasswordManager/mainwindow.h \
 		../COMP09044_CW_PasswordManager/accountdirectory.h \
 		../COMP09044_CW_PasswordManager/account.h \
 		../COMP09044_CW_PasswordManager/datahandler.h \
 		../COMP09044_CW_PasswordManager/hashtable.h \
+		../COMP09044_CW_PasswordManager/newaccount.h \
 		moc_predefs.h \
 		/usr/lib/qt5/bin/moc
 	/usr/lib/qt5/bin/moc $(DEFINES) --include '/mnt/15f210d7-aa4f-4ea8-a4b3-2bd52aeba8fc/Programming/Uni/Algorithms & Collections/PROJECT/COMP09044_CW_PasswordManager/build-COMP09044_CW_PasswordManager-Desktop-Debug/moc_predefs.h' -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I'/mnt/15f210d7-aa4f-4ea8-a4b3-2bd52aeba8fc/Programming/Uni/Algorithms & Collections/PROJECT/COMP09044_CW_PasswordManager/COMP09044_CW_PasswordManager' -I/usr/include/x86_64-linux-gnu/qt5/Qca-qt5/QtCrypto -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtWidgets -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5/QtSql -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I. -I/usr/include/c++/10 -I/usr/include/x86_64-linux-gnu/c++/10 -I/usr/include/c++/10/backward -I/usr/lib/gcc/x86_64-linux-gnu/10/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include ../COMP09044_CW_PasswordManager/mainwindow.h -o moc_mainwindow.cpp
+
+moc_newaccount.cpp: ../COMP09044_CW_PasswordManager/newaccount.h \
+		moc_predefs.h \
+		/usr/lib/qt5/bin/moc
+	/usr/lib/qt5/bin/moc $(DEFINES) --include '/mnt/15f210d7-aa4f-4ea8-a4b3-2bd52aeba8fc/Programming/Uni/Algorithms & Collections/PROJECT/COMP09044_CW_PasswordManager/build-COMP09044_CW_PasswordManager-Desktop-Debug/moc_predefs.h' -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I'/mnt/15f210d7-aa4f-4ea8-a4b3-2bd52aeba8fc/Programming/Uni/Algorithms & Collections/PROJECT/COMP09044_CW_PasswordManager/COMP09044_CW_PasswordManager' -I/usr/include/x86_64-linux-gnu/qt5/Qca-qt5/QtCrypto -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtWidgets -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5/QtSql -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I. -I/usr/include/c++/10 -I/usr/include/x86_64-linux-gnu/c++/10 -I/usr/include/c++/10/backward -I/usr/lib/gcc/x86_64-linux-gnu/10/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include ../COMP09044_CW_PasswordManager/newaccount.h -o moc_newaccount.cpp
 
 compiler_moc_objc_header_make_all:
 compiler_moc_objc_header_clean:
 compiler_moc_source_make_all:
 compiler_moc_source_clean:
-compiler_uic_make_all: ui_mainwindow.h
+compiler_uic_make_all: ui_mainwindow.h ui_newaccount.h
 compiler_uic_clean:
-	-$(DEL_FILE) ui_mainwindow.h
+	-$(DEL_FILE) ui_mainwindow.h ui_newaccount.h
 ui_mainwindow.h: ../COMP09044_CW_PasswordManager/mainwindow.ui \
 		/usr/lib/qt5/bin/uic
 	/usr/lib/qt5/bin/uic ../COMP09044_CW_PasswordManager/mainwindow.ui -o ui_mainwindow.h
+
+ui_newaccount.h: ../COMP09044_CW_PasswordManager/newaccount.ui \
+		/usr/lib/qt5/bin/uic
+	/usr/lib/qt5/bin/uic ../COMP09044_CW_PasswordManager/newaccount.ui -o ui_newaccount.h
 
 compiler_yacc_decl_make_all:
 compiler_yacc_decl_clean:
@@ -435,6 +451,7 @@ main.o: ../COMP09044_CW_PasswordManager/main.cpp ../COMP09044_CW_PasswordManager
 		../COMP09044_CW_PasswordManager/account.h \
 		../COMP09044_CW_PasswordManager/datahandler.h \
 		../COMP09044_CW_PasswordManager/hashtable.h \
+		../COMP09044_CW_PasswordManager/newaccount.h \
 		../COMP09044_CW_PasswordManager/unittest.h \
 		../COMP09044_CW_PasswordManager/password.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o main.o ../COMP09044_CW_PasswordManager/main.cpp
@@ -444,8 +461,13 @@ mainwindow.o: ../COMP09044_CW_PasswordManager/mainwindow.cpp ../COMP09044_CW_Pas
 		../COMP09044_CW_PasswordManager/account.h \
 		../COMP09044_CW_PasswordManager/datahandler.h \
 		../COMP09044_CW_PasswordManager/hashtable.h \
+		../COMP09044_CW_PasswordManager/newaccount.h \
 		ui_mainwindow.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o mainwindow.o ../COMP09044_CW_PasswordManager/mainwindow.cpp
+
+newaccount.o: ../COMP09044_CW_PasswordManager/newaccount.cpp ../COMP09044_CW_PasswordManager/newaccount.h \
+		ui_newaccount.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o newaccount.o ../COMP09044_CW_PasswordManager/newaccount.cpp
 
 password.o: ../COMP09044_CW_PasswordManager/password.cpp ../COMP09044_CW_PasswordManager/password.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o password.o ../COMP09044_CW_PasswordManager/password.cpp
@@ -460,6 +482,9 @@ unittest.o: ../COMP09044_CW_PasswordManager/unittest.cpp ../COMP09044_CW_Passwor
 
 moc_mainwindow.o: moc_mainwindow.cpp 
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o moc_mainwindow.o moc_mainwindow.cpp
+
+moc_newaccount.o: moc_newaccount.cpp 
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o moc_newaccount.o moc_newaccount.cpp
 
 ####### Install
 

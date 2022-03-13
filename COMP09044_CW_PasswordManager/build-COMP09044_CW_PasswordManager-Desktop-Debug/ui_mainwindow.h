@@ -10,18 +10,19 @@
 #define UI_MAINWINDOW_H
 
 #include <QtCore/QVariant>
+#include <QtGui/QIcon>
 #include <QtWidgets/QAction>
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QComboBox>
 #include <QtWidgets/QHeaderView>
 #include <QtWidgets/QLabel>
+#include <QtWidgets/QLineEdit>
 #include <QtWidgets/QMainWindow>
 #include <QtWidgets/QMenu>
 #include <QtWidgets/QMenuBar>
 #include <QtWidgets/QPushButton>
 #include <QtWidgets/QStatusBar>
 #include <QtWidgets/QTableWidget>
-#include <QtWidgets/QTextEdit>
 #include <QtWidgets/QWidget>
 
 QT_BEGIN_NAMESPACE
@@ -35,7 +36,6 @@ public:
     QAction *actionExport;
     QWidget *centralwidget;
     QLabel *Label_MainMenu;
-    QTextEdit *input_Search;
     QComboBox *input_Sort;
     QTableWidget *List_accounts;
     QLabel *label_uname;
@@ -43,6 +43,7 @@ public:
     QLabel *label_date_created;
     QLabel *label_date_last_used;
     QPushButton *button_click_search;
+    QLineEdit *search_input;
     QMenuBar *menubar;
     QMenu *menuFiles;
     QMenu *menuEdit;
@@ -73,25 +74,6 @@ public:
         Label_MainMenu->setObjectName(QString::fromUtf8("Label_MainMenu"));
         Label_MainMenu->setGeometry(QRect(20, 10, 65, 31));
         Label_MainMenu->setWordWrap(true);
-        input_Search = new QTextEdit(centralwidget);
-        input_Search->setObjectName(QString::fromUtf8("input_Search"));
-        input_Search->setGeometry(QRect(100, 20, 511, 21));
-        QSizePolicy sizePolicy(QSizePolicy::Fixed, QSizePolicy::Fixed);
-        sizePolicy.setHorizontalStretch(0);
-        sizePolicy.setVerticalStretch(0);
-        sizePolicy.setHeightForWidth(input_Search->sizePolicy().hasHeightForWidth());
-        input_Search->setSizePolicy(sizePolicy);
-        QFont font;
-        font.setPointSize(8);
-        input_Search->setFont(font);
-        input_Search->setLineWidth(1);
-        input_Search->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
-        input_Search->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
-        input_Search->setTabChangesFocus(false);
-        input_Search->setLineWrapMode(QTextEdit::NoWrap);
-        input_Search->setOverwriteMode(false);
-        input_Search->setCursorWidth(1);
-        input_Search->setTextInteractionFlags(Qt::LinksAccessibleByKeyboard|Qt::LinksAccessibleByMouse|Qt::TextBrowserInteraction|Qt::TextEditable|Qt::TextEditorInteraction|Qt::TextSelectableByKeyboard|Qt::TextSelectableByMouse);
         input_Sort = new QComboBox(centralwidget);
         input_Sort->addItem(QString());
         input_Sort->addItem(QString());
@@ -130,6 +112,11 @@ public:
         button_click_search = new QPushButton(centralwidget);
         button_click_search->setObjectName(QString::fromUtf8("button_click_search"));
         button_click_search->setGeometry(QRect(610, 20, 41, 21));
+        QIcon icon(QIcon::fromTheme(QString::fromUtf8("SP_DialogApplyButton")));
+        button_click_search->setIcon(icon);
+        search_input = new QLineEdit(centralwidget);
+        search_input->setObjectName(QString::fromUtf8("search_input"));
+        search_input->setGeometry(QRect(112, 20, 501, 21));
         MainWindow->setCentralWidget(centralwidget);
         menubar = new QMenuBar(MainWindow);
         menubar->setObjectName(QString::fromUtf8("menubar"));
@@ -175,7 +162,6 @@ public:
         actionImport->setText(QCoreApplication::translate("MainWindow", "Import", nullptr));
         actionExport->setText(QCoreApplication::translate("MainWindow", "Export", nullptr));
         Label_MainMenu->setText(QCoreApplication::translate("MainWindow", "Password Prototype", nullptr));
-        input_Search->setPlaceholderText(QCoreApplication::translate("MainWindow", "Search ", nullptr));
         input_Sort->setItemText(0, QCoreApplication::translate("MainWindow", "Alphabetical", nullptr));
         input_Sort->setItemText(1, QCoreApplication::translate("MainWindow", "Earliest Created", nullptr));
         input_Sort->setItemText(2, QCoreApplication::translate("MainWindow", "Last Used", nullptr));
@@ -186,7 +172,9 @@ public:
         label_email->setText(QCoreApplication::translate("MainWindow", "Email", nullptr));
         label_date_created->setText(QCoreApplication::translate("MainWindow", "Date created", nullptr));
         label_date_last_used->setText(QCoreApplication::translate("MainWindow", "Last Used", nullptr));
-        button_click_search->setText(QString());
+        button_click_search->setText(QCoreApplication::translate("MainWindow", "Go!", nullptr));
+        search_input->setText(QString());
+        search_input->setPlaceholderText(QCoreApplication::translate("MainWindow", "Search", nullptr));
         menuFiles->setTitle(QCoreApplication::translate("MainWindow", "Files", nullptr));
         menuEdit->setTitle(QCoreApplication::translate("MainWindow", "Edit", nullptr));
         menuOptions->setTitle(QCoreApplication::translate("MainWindow", "Options", nullptr));

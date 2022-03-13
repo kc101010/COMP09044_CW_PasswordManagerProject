@@ -1,4 +1,4 @@
-QT += core gui sql
+QT += core gui sql widgets
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
@@ -14,6 +14,7 @@ SOURCES += \
     datahandler.cpp \
     main.cpp \
     mainwindow.cpp \
+    newaccount.cpp \
     password.cpp \
     unittest.cpp
 
@@ -23,11 +24,13 @@ HEADERS += \
     datahandler.h \
     hashtable.h \
     mainwindow.h \
+    newaccount.h \
     password.h \
     unittest.h
 
 FORMS += \
-    mainwindow.ui
+    mainwindow.ui \
+    newaccount.ui
 
 LIBS += -L$${PATH_QCA_LIB} -lqca
 

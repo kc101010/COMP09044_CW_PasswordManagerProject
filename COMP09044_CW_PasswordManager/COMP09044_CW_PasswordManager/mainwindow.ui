@@ -39,54 +39,6 @@
      <bool>true</bool>
     </property>
    </widget>
-   <widget class="QTextEdit" name="input_Search">
-    <property name="geometry">
-     <rect>
-      <x>100</x>
-      <y>20</y>
-      <width>511</width>
-      <height>21</height>
-     </rect>
-    </property>
-    <property name="sizePolicy">
-     <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-      <horstretch>0</horstretch>
-      <verstretch>0</verstretch>
-     </sizepolicy>
-    </property>
-    <property name="font">
-     <font>
-      <pointsize>8</pointsize>
-     </font>
-    </property>
-    <property name="lineWidth">
-     <number>1</number>
-    </property>
-    <property name="verticalScrollBarPolicy">
-     <enum>Qt::ScrollBarAlwaysOff</enum>
-    </property>
-    <property name="horizontalScrollBarPolicy">
-     <enum>Qt::ScrollBarAlwaysOff</enum>
-    </property>
-    <property name="tabChangesFocus">
-     <bool>false</bool>
-    </property>
-    <property name="lineWrapMode">
-     <enum>QTextEdit::NoWrap</enum>
-    </property>
-    <property name="overwriteMode">
-     <bool>false</bool>
-    </property>
-    <property name="cursorWidth">
-     <number>1</number>
-    </property>
-    <property name="textInteractionFlags">
-     <set>Qt::LinksAccessibleByKeyboard|Qt::LinksAccessibleByMouse|Qt::TextBrowserInteraction|Qt::TextEditable|Qt::TextEditorInteraction|Qt::TextSelectableByKeyboard|Qt::TextSelectableByMouse</set>
-    </property>
-    <property name="placeholderText">
-     <string>Search </string>
-    </property>
-   </widget>
    <widget class="QComboBox" name="input_Sort">
     <property name="geometry">
      <rect>
@@ -233,7 +185,26 @@
      </rect>
     </property>
     <property name="text">
+     <string>Go!</string>
+    </property>
+    <property name="icon">
+     <iconset theme="SP_DialogApplyButton"/>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="search_input">
+    <property name="geometry">
+     <rect>
+      <x>112</x>
+      <y>20</y>
+      <width>501</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="text">
      <string/>
+    </property>
+    <property name="placeholderText">
+     <string>Search</string>
     </property>
    </widget>
   </widget>

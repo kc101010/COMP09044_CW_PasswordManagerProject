@@ -69,3 +69,12 @@ void MainWindow::on_List_accounts_itemDoubleClicked(QTableWidgetItem *item)
     //FUTURE/To-do: open data in new account form to allow user editing
 
 }
+
+void MainWindow::on_actionNew_Account_triggered()
+{
+    QDialog* dlg = new NewAccount;
+    dlg->exec();
+
+}
+
+
