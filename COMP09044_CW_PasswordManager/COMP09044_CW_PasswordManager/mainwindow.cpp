@@ -72,9 +72,14 @@ void MainWindow::on_List_accounts_itemDoubleClicked(QTableWidgetItem *item)
 
 void MainWindow::on_actionNew_Account_triggered()
 {
+    //create a new dialog as NewAccount ui and execute
     QDialog* dlg = new NewAccount;
     dlg->exec();
-
 }
 
 
+
+void MainWindow::on_actionRefresh_triggered()
+{
+    this->setAccountList();
+}

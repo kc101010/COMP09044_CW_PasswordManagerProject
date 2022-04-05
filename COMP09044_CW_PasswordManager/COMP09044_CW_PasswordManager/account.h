@@ -1,6 +1,7 @@
 #ifndef ACCOUNT_H
 #define ACCOUNT_H
 
+#include "inputvalexcept.h"
 #include <QDate>
 #include <QDebug>
 #include <QException>
@@ -16,8 +17,10 @@ class Account
         QDate lastUse;          //track when account was last used
         QDate dateCreated;      //store when a specific account was first created
 
+
     public:
         Account(QString un, QString pw, QString em, QDate dc);  //constructor used to set up account
+        Account();
         QString get_password();
         void set_password(QString new_pword);
         QString get_username();
@@ -28,6 +31,7 @@ class Account
         void set_last_use(QDate date);
         QDate get_date_created();
         void set_date_created(QDate creation_date);
+
 };
 
 #endif // ACCOUNT_H

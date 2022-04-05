@@ -31,7 +31,7 @@ class Ui_MainWindow
 {
 public:
     QAction *actionNew_Account;
-    QAction *actionSave;
+    QAction *actionRefresh;
     QAction *actionImport;
     QAction *actionExport;
     QWidget *centralwidget;
@@ -61,8 +61,8 @@ public:
         MainWindow->setMinimumSize(QSize(800, 600));
         actionNew_Account = new QAction(MainWindow);
         actionNew_Account->setObjectName(QString::fromUtf8("actionNew_Account"));
-        actionSave = new QAction(MainWindow);
-        actionSave->setObjectName(QString::fromUtf8("actionSave"));
+        actionRefresh = new QAction(MainWindow);
+        actionRefresh->setObjectName(QString::fromUtf8("actionRefresh"));
         actionImport = new QAction(MainWindow);
         actionImport->setObjectName(QString::fromUtf8("actionImport"));
         actionExport = new QAction(MainWindow);
@@ -112,7 +112,13 @@ public:
         button_click_search = new QPushButton(centralwidget);
         button_click_search->setObjectName(QString::fromUtf8("button_click_search"));
         button_click_search->setGeometry(QRect(610, 20, 41, 21));
-        QIcon icon(QIcon::fromTheme(QString::fromUtf8("SP_DialogApplyButton")));
+        QIcon icon;
+        QString iconThemeName = QString::fromUtf8("SP_DialogApplyButton");
+        if (QIcon::hasThemeIcon(iconThemeName)) {
+            icon = QIcon::fromTheme(iconThemeName);
+        } else {
+            icon.addFile(QString::fromUtf8("."), QSize(), QIcon::Normal, QIcon::Off);
+        }
         button_click_search->setIcon(icon);
         search_input = new QLineEdit(centralwidget);
         search_input->setObjectName(QString::fromUtf8("search_input"));
@@ -145,7 +151,7 @@ public:
         menubar->addAction(menuWindow->menuAction());
         menubar->addAction(menuHelp->menuAction());
         menuFiles->addAction(actionNew_Account);
-        menuFiles->addAction(actionSave);
+        menuFiles->addAction(actionRefresh);
         menuFiles->addAction(actionImport);
         menuFiles->addAction(actionExport);
 
@@ -158,7 +164,7 @@ public:
     {
         MainWindow->setWindowTitle(QCoreApplication::translate("MainWindow", "Password Manager (Prototype)", nullptr));
         actionNew_Account->setText(QCoreApplication::translate("MainWindow", "New Account", nullptr));
-        actionSave->setText(QCoreApplication::translate("MainWindow", "Save", nullptr));
+        actionRefresh->setText(QCoreApplication::translate("MainWindow", "Refresh", nullptr));
         actionImport->setText(QCoreApplication::translate("MainWindow", "Import", nullptr));
         actionExport->setText(QCoreApplication::translate("MainWindow", "Export", nullptr));
         Label_MainMenu->setText(QCoreApplication::translate("MainWindow", "Password Prototype", nullptr));

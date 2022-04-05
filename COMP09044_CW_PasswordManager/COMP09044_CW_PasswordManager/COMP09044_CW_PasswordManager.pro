@@ -12,6 +12,7 @@ SOURCES += \
     account.cpp \
     accountdirectory.cpp \
     datahandler.cpp \
+    inputvalexcept.cpp \
     main.cpp \
     mainwindow.cpp \
     newaccount.cpp \
@@ -23,6 +24,7 @@ HEADERS += \
     accountdirectory.h \
     datahandler.h \
     hashtable.h \
+    inputvalexcept.h \
     mainwindow.h \
     newaccount.h \
     password.h \

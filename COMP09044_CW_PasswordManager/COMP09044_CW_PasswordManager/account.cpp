@@ -51,6 +51,7 @@ void Account::set_email(QString new_email){
     //otherwise inform user that email isn't valid
     }else{
         qDebug() << "Could not set email - not valid" << Qt::endl;
+        throw new Inputvalexcept();
     }
 
 }
@@ -68,6 +69,7 @@ void Account::set_last_use(QDate date){
     //otherwise print error info
     }else{
         qDebug() << "Could not set last use date - not valid" << Qt::endl;
+        throw new Inputvalexcept();
     }
 
 }
@@ -85,8 +87,10 @@ void Account::set_date_created(QDate creation_date){
     //otherwise print error info
     }else{
         qDebug() << "Could not set creation date - Not valid" << Qt::endl;
+        throw new Inputvalexcept();
     }
 }
+
 
 
 

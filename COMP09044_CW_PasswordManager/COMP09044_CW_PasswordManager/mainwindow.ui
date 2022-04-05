@@ -188,7 +188,8 @@
      <string>Go!</string>
     </property>
     <property name="icon">
-     <iconset theme="SP_DialogApplyButton"/>
+     <iconset theme="SP_DialogApplyButton">
+      <normaloff>.</normaloff>.</iconset>
     </property>
    </widget>
    <widget class="QLineEdit" name="search_input">
@@ -222,7 +223,7 @@
      <string>Files</string>
     </property>
     <addaction name="actionNew_Account"/>
-    <addaction name="actionSave"/>
+    <addaction name="actionRefresh"/>
     <addaction name="actionImport"/>
     <addaction name="actionExport"/>
    </widget>
@@ -264,9 +265,9 @@
     <string>New Account</string>
    </property>
   </action>
-  <action name="actionSave">
+  <action name="actionRefresh">
    <property name="text">
-    <string>Save</string>
+    <string>Refresh</string>
    </property>
   </action>
   <action name="actionImport">
