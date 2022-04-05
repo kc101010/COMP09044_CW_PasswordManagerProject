@@ -1,19 +1,21 @@
 #ifndef PASSWORD_H
 #define PASSWORD_H
 
+#include "inputvalexcept.h"
 #include <QChar>
 #include <QDebug>
 #include <QException>
 #include <QString>
 #include <QRandomGenerator>
+#include <QRegularExpression>
 
 
 class Password
 {
 
 private:
-    QString password;
-    qint16 length;
+    QString password;   //stores password
+    qint16 length;      //stores current password length to use
 public:
     Password();
     QString password_builder(qint16 len);

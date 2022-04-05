@@ -4,7 +4,7 @@
 #ifndef INPUTVALEXCEPT_H
 #define INPUTVALEXCEPT_H
 
-
+//class extends QException, custom exception used for input validation
 class Inputvalexcept : public QException
 {
 public:

@@ -11,6 +11,7 @@
 
 #include <QtCore/QVariant>
 #include <QtWidgets/QApplication>
+#include <QtWidgets/QCheckBox>
 #include <QtWidgets/QLineEdit>
 #include <QtWidgets/QPushButton>
 #include <QtWidgets/QWidget>
@@ -27,6 +28,7 @@ public:
     QLineEdit *input_ConfirmPassword;
     QLineEdit *input_Website;
     QPushButton *button_cancel_exit;
+    QCheckBox *input_GeneratePassword;
 
     void setupUi(QWidget *NewAccount)
     {
@@ -55,10 +57,15 @@ public:
         input_ConfirmPassword->setEchoMode(QLineEdit::Password);
         input_Website = new QLineEdit(NewAccount);
         input_Website->setObjectName(QString::fromUtf8("input_Website"));
+        input_Website->setEnabled(false);
         input_Website->setGeometry(QRect(140, 80, 113, 23));
         button_cancel_exit = new QPushButton(NewAccount);
         button_cancel_exit->setObjectName(QString::fromUtf8("button_cancel_exit"));
         button_cancel_exit->setGeometry(QRect(150, 240, 84, 23));
+        input_GeneratePassword = new QCheckBox(NewAccount);
+        input_GeneratePassword->setObjectName(QString::fromUtf8("input_GeneratePassword"));
+        input_GeneratePassword->setGeometry(QRect(260, 110, 92, 21));
+        input_GeneratePassword->setTristate(false);
 
         retranslateUi(NewAccount);
 
@@ -75,6 +82,7 @@ public:
         input_ConfirmPassword->setPlaceholderText(QCoreApplication::translate("NewAccount", "Confirm password", nullptr));
         input_Website->setPlaceholderText(QCoreApplication::translate("NewAccount", "Website", nullptr));
         button_cancel_exit->setText(QCoreApplication::translate("NewAccount", "Cancel", nullptr));
+        input_GeneratePassword->setText(QCoreApplication::translate("NewAccount", "Generate", nullptr));
     } // retranslateUi
 
 };

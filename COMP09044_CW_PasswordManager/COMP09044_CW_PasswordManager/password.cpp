@@ -6,6 +6,7 @@ Password::Password()
 
 }
 
+//function generates a password based on the given length
 QString Password::password_builder(qint16 len){
     //declare character to append to password, string for password
     QChar to_add;

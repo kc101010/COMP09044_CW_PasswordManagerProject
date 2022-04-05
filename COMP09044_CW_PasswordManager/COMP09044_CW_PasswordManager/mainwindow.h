@@ -22,7 +22,6 @@ public:
 private slots:
     void on_List_accounts_itemDoubleClicked(QTableWidgetItem *item);
     void on_actionNew_Account_triggered();
-
     void on_actionRefresh_triggered();
 
 private:
