@@ -1,3 +1,9 @@
+/*
+ * B00415210 COMP09044 CW2
+ * Password Manager Project - UnitTest header/definition
+ * Class used to test features during development stage
+*/
+
 #ifndef UNITTEST_H
 #define UNITTEST_H
 

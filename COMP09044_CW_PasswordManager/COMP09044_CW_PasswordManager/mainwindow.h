@@ -1,3 +1,9 @@
+/*
+ * B00415210 COMP09044 CW2
+ * Password Manager Project - MainWindow header/definition
+ * Class used to control primary interface
+*/
+
 #ifndef MAINWINDOW_H
 #define MAINWINDOW_H
 

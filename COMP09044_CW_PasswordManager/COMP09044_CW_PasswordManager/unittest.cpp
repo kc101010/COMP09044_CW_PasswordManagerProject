@@ -1,3 +1,9 @@
+/*
+ * B00415210 COMP09044 CW2
+ * Password Manager Project - UnitTest class
+ * Class used to test features during development stage
+*/
+
 #include "unittest.h"
 
 UnitTest::UnitTest()

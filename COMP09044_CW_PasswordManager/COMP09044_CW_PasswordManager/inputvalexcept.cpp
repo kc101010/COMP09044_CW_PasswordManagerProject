@@ -1,3 +1,9 @@
+/*
+ * B00415210 COMP09044 CW2
+ * Password Manager Project - Input Validation Exception class
+ * Class used for Input Validation errors
+*/
+
 #include "inputvalexcept.h"
 
 Inputvalexcept::Inputvalexcept()

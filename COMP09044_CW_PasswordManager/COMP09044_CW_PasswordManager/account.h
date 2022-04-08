@@ -1,3 +1,9 @@
+/*
+ * B00415210 COMP09044 CW2
+ * Password Manager Project - Account header/definition
+ * Class used to store user account details
+*/
+
 #ifndef ACCOUNT_H
 #define ACCOUNT_H
 

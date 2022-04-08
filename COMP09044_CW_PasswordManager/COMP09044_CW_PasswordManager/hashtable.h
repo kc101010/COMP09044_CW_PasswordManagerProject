@@ -1,3 +1,10 @@
+/*
+ * B00415210 COMP09044 CW2
+ * Password Manager Project - HashTable class template
+ * Class represents a HashTable data structure and its operations
+*/
+
+
 #ifndef HASHTABLE_H
 #define HASHTABLE_H
 

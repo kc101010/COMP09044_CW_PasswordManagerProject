@@ -1,5 +1,10 @@
-#include "password.h"
+/*
+ * B00415210 COMP09044 CW2
+ * Password Manager Project - Password class
+ * Class used to generate secure passwords
+*/
 
+#include "password.h"
 
 Password::Password()
 {

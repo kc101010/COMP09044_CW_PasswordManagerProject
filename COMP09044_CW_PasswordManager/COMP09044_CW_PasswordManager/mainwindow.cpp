@@ -1,7 +1,11 @@
+/*
+ * B00415210 COMP09044 CW2
+ * Password Manager Project - MainWindow class
+ * Class used to control primary interface
+*/
+
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
-
-
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
@@ -11,6 +15,9 @@ MainWindow::MainWindow(QWidget *parent)
 }
 
 void MainWindow::setAccountList(){
+
+    //Refresh accounts to include new data
+    Accounts.refresh_list();
 
     //set temp variable to interact with account list table
     QTableWidget* tmp = centralWidget()->findChild<QTableWidget*>("List_accounts");

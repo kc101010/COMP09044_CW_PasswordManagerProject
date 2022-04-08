@@ -8,6 +8,10 @@ My coursework for COMP09044 'Algorithms &amp; Collections' @ University of the W
 + QT Cryptographic Architecture
 + C++
 
+# RESOURCES USED
++ https://regexr.com/
++ https://doc.qt.io/
+
 # Authored by Project Developer - Kyle Christie (kc101010)
 
 + https://twitter.com/KyleChr00194607

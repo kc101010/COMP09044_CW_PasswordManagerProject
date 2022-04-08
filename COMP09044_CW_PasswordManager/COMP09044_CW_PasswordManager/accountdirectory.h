@@ -1,3 +1,9 @@
+/*
+ * B00415210 COMP09044 CW2
+ * Password Manager Project - AccountDirectory header/definition
+ * Class uses a hashtable to hold user Accounts from Database
+*/
+
 #ifndef ACCOUNTDIRECTORY_H
 #define ACCOUNTDIRECTORY_H
 
@@ -19,6 +25,7 @@ public:
     void new_account();
     void delete_account();
     void modify_account();
+    void refresh_list();
     Account* at(int index);
     qint32 size();
 

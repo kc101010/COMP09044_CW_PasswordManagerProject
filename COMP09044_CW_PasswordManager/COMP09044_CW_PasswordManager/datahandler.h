@@ -1,3 +1,9 @@
+/*
+ * B00415210 COMP09044 CW2
+ * Password Manager Project - DataHandler header/definition
+ * Class interacts with SQLite database to store and manage account info
+*/
+
 #ifndef DATAHANDLER_H
 #define DATAHANDLER_H
 

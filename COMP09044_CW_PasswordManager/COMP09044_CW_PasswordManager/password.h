@@ -1,3 +1,9 @@
+/*
+ * B00415210 COMP09044 CW2
+ * Password Manager Project - Password header/definition
+ * Class used to generate secure passwords
+*/
+
 #ifndef PASSWORD_H
 #define PASSWORD_H
 

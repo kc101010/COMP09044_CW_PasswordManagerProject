@@ -1,3 +1,9 @@
+/*
+ * B00415210 COMP09044 CW2
+ * Password Manager Project - Account class
+ * Class used to store user account details
+*/
+
 #include "account.h"
 
 //constructor sets up most of the account details
@@ -32,7 +38,11 @@ QString Account::get_username(){
 
 //function sets a new username to be stored
 void Account::set_username(QString new_username){
-    username = new_username;
+    if(new_username.length() > 2){
+        username = new_username;
+    }else{
+        throw Inputvalexcept();
+    }
 }
 
 //function allows viewing of stored email
@@ -51,7 +61,7 @@ void Account::set_email(QString new_email){
     //otherwise inform user that email isn't valid
     }else{
         qDebug() << "Could not set email - not valid" << Qt::endl;
-        throw new Inputvalexcept();
+        throw Inputvalexcept();
     }
 
 }
@@ -69,7 +79,7 @@ void Account::set_last_use(QDate date){
     //otherwise print error info
     }else{
         qDebug() << "Could not set last use date - not valid" << Qt::endl;
-        throw new Inputvalexcept();
+        throw Inputvalexcept();
     }
 
 }
@@ -87,7 +97,7 @@ void Account::set_date_created(QDate creation_date){
     //otherwise print error info
     }else{
         qDebug() << "Could not set creation date - Not valid" << Qt::endl;
-        throw new Inputvalexcept();
+        throw Inputvalexcept();
     }
 }
 

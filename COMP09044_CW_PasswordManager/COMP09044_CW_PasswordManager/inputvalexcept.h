@@ -1,3 +1,10 @@
+/*
+ * B00415210 COMP09044 CW2
+ * Password Manager Project - Input Validation Exception header/definition
+ * Class used for Input Validation errors
+*/
+
+
 #include <QException>
 #include <QDebug>
 
