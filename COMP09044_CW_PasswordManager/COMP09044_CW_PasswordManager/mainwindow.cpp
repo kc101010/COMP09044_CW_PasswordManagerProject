@@ -87,7 +87,6 @@ void MainWindow::on_actionNew_Account_triggered()
 }
 
 
-
 void MainWindow::on_actionRefresh_triggered()
 {
     this->setAccountList();

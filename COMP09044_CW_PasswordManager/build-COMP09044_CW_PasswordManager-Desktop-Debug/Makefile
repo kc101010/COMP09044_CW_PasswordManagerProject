@@ -54,6 +54,7 @@ OBJECTS_DIR   = ./
 
 SOURCES       = ../COMP09044_CW_PasswordManager/account.cpp \
 		../COMP09044_CW_PasswordManager/accountdirectory.cpp \
+		../COMP09044_CW_PasswordManager/breachchecker.cpp \
 		../COMP09044_CW_PasswordManager/datahandler.cpp \
 		../COMP09044_CW_PasswordManager/inputvalexcept.cpp \
 		../COMP09044_CW_PasswordManager/main.cpp \
@@ -64,6 +65,7 @@ SOURCES       = ../COMP09044_CW_PasswordManager/account.cpp \
 		moc_newaccount.cpp
 OBJECTS       = account.o \
 		accountdirectory.o \
+		breachchecker.o \
 		datahandler.o \
 		inputvalexcept.o \
 		main.o \
@@ -155,6 +157,7 @@ DIST          = /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/spec_pre.prf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/lex.prf \
 		../COMP09044_CW_PasswordManager/COMP09044_CW_PasswordManager.pro ../COMP09044_CW_PasswordManager/account.h \
 		../COMP09044_CW_PasswordManager/accountdirectory.h \
+		../COMP09044_CW_PasswordManager/breachchecker.h \
 		../COMP09044_CW_PasswordManager/datahandler.h \
 		../COMP09044_CW_PasswordManager/hashtable.h \
 		../COMP09044_CW_PasswordManager/inputvalexcept.h \
@@ -163,6 +166,7 @@ DIST          = /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/spec_pre.prf \
 		../COMP09044_CW_PasswordManager/password.h \
 		../COMP09044_CW_PasswordManager/unittest.h ../COMP09044_CW_PasswordManager/account.cpp \
 		../COMP09044_CW_PasswordManager/accountdirectory.cpp \
+		../COMP09044_CW_PasswordManager/breachchecker.cpp \
 		../COMP09044_CW_PasswordManager/datahandler.cpp \
 		../COMP09044_CW_PasswordManager/inputvalexcept.cpp \
 		../COMP09044_CW_PasswordManager/main.cpp \
@@ -359,8 +363,8 @@ distdir: FORCE
 	@test -d $(DISTDIR) || mkdir -p $(DISTDIR)
 	$(COPY_FILE) --parents $(DIST) $(DISTDIR)/
 	$(COPY_FILE) --parents /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/data/dummy.cpp $(DISTDIR)/
-	$(COPY_FILE) --parents ../COMP09044_CW_PasswordManager/account.h ../COMP09044_CW_PasswordManager/accountdirectory.h ../COMP09044_CW_PasswordManager/datahandler.h ../COMP09044_CW_PasswordManager/hashtable.h ../COMP09044_CW_PasswordManager/inputvalexcept.h ../COMP09044_CW_PasswordManager/mainwindow.h ../COMP09044_CW_PasswordManager/newaccount.h ../COMP09044_CW_PasswordManager/password.h ../COMP09044_CW_PasswordManager/unittest.h $(DISTDIR)/
-	$(COPY_FILE) --parents ../COMP09044_CW_PasswordManager/account.cpp ../COMP09044_CW_PasswordManager/accountdirectory.cpp ../COMP09044_CW_PasswordManager/datahandler.cpp ../COMP09044_CW_PasswordManager/inputvalexcept.cpp ../COMP09044_CW_PasswordManager/main.cpp ../COMP09044_CW_PasswordManager/mainwindow.cpp ../COMP09044_CW_PasswordManager/newaccount.cpp ../COMP09044_CW_PasswordManager/password.cpp ../COMP09044_CW_PasswordManager/unittest.cpp $(DISTDIR)/
+	$(COPY_FILE) --parents ../COMP09044_CW_PasswordManager/account.h ../COMP09044_CW_PasswordManager/accountdirectory.h ../COMP09044_CW_PasswordManager/breachchecker.h ../COMP09044_CW_PasswordManager/datahandler.h ../COMP09044_CW_PasswordManager/hashtable.h ../COMP09044_CW_PasswordManager/inputvalexcept.h ../COMP09044_CW_PasswordManager/mainwindow.h ../COMP09044_CW_PasswordManager/newaccount.h ../COMP09044_CW_PasswordManager/password.h ../COMP09044_CW_PasswordManager/unittest.h $(DISTDIR)/
+	$(COPY_FILE) --parents ../COMP09044_CW_PasswordManager/account.cpp ../COMP09044_CW_PasswordManager/accountdirectory.cpp ../COMP09044_CW_PasswordManager/breachchecker.cpp ../COMP09044_CW_PasswordManager/datahandler.cpp ../COMP09044_CW_PasswordManager/inputvalexcept.cpp ../COMP09044_CW_PasswordManager/main.cpp ../COMP09044_CW_PasswordManager/mainwindow.cpp ../COMP09044_CW_PasswordManager/newaccount.cpp ../COMP09044_CW_PasswordManager/password.cpp ../COMP09044_CW_PasswordManager/unittest.cpp $(DISTDIR)/
 	$(COPY_FILE) --parents ../COMP09044_CW_PasswordManager/mainwindow.ui ../COMP09044_CW_PasswordManager/newaccount.ui $(DISTDIR)/
 
 
@@ -454,6 +458,11 @@ accountdirectory.o: ../COMP09044_CW_PasswordManager/accountdirectory.cpp ../COMP
 		../COMP09044_CW_PasswordManager/datahandler.h \
 		../COMP09044_CW_PasswordManager/hashtable.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o accountdirectory.o ../COMP09044_CW_PasswordManager/accountdirectory.cpp
+
+breachchecker.o: ../COMP09044_CW_PasswordManager/breachchecker.cpp ../COMP09044_CW_PasswordManager/breachchecker.h \
+		../COMP09044_CW_PasswordManager/account.h \
+		../COMP09044_CW_PasswordManager/inputvalexcept.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o breachchecker.o ../COMP09044_CW_PasswordManager/breachchecker.cpp
 
 datahandler.o: ../COMP09044_CW_PasswordManager/datahandler.cpp ../COMP09044_CW_PasswordManager/datahandler.h \
 		../COMP09044_CW_PasswordManager/account.h \
