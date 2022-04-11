@@ -14,6 +14,7 @@ MainWindow::MainWindow(QWidget *parent)
     ui->setupUi(this);
 }
 
+
 void MainWindow::setAccountList(){
 
     //Refresh accounts to include new data
@@ -63,6 +64,7 @@ MainWindow::~MainWindow()
 
 void MainWindow::on_List_accounts_itemDoubleClicked(QTableWidgetItem *item)
 {
+
     //user double clicks account to edit
     qDebug() << "User clicked: " << item->row();
 
@@ -80,7 +82,7 @@ void MainWindow::on_List_accounts_itemDoubleClicked(QTableWidgetItem *item)
 void MainWindow::on_actionNew_Account_triggered()
 {
     //create a new dialog as NewAccount ui and execute
-    QDialog* dlg = new NewAccount;
+    QDialog* dlg = new NewAccount();
     dlg->exec();
 }
 
@@ -89,4 +91,9 @@ void MainWindow::on_actionNew_Account_triggered()
 void MainWindow::on_actionRefresh_triggered()
 {
     this->setAccountList();
+}
+
+void MainWindow::on_input_Sort_currentIndexChanged(const QString &arg1)
+{
+    qDebug() << arg1 << Qt::endl;
 }

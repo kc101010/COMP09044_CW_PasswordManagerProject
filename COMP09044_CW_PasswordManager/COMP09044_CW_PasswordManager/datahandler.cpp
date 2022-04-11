@@ -32,6 +32,7 @@ DataHandler::DataHandler(){
 }
 
 DataHandler::~DataHandler(){
+    db.close();
     //Encrypt database
     //EncryptDB();
 }

@@ -11,6 +11,7 @@ CONFIG += c++11 crypto
 SOURCES += \
     account.cpp \
     accountdirectory.cpp \
+    breachchecker.cpp \
     datahandler.cpp \
     inputvalexcept.cpp \
     main.cpp \
@@ -22,6 +23,7 @@ SOURCES += \
 HEADERS += \
     account.h \
     accountdirectory.h \
+    breachchecker.h \
     datahandler.h \
     hashtable.h \
     inputvalexcept.h \

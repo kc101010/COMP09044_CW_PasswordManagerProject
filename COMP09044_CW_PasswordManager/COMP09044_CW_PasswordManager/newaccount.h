@@ -11,6 +11,8 @@
 #include "password.h"
 #include "account.h"
 #include "datahandler.h"
+#include "password.h"
+#include "accountdirectory.h"
 #include <QWidget>
 #include <QDialog>
 #include <QMessageBox>

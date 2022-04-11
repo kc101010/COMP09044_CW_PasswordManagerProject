@@ -27,6 +27,7 @@ class DataHandler
         QSqlDatabase db;   //stores database to be used
         QFile DataFile;    //stores database file for encryption/decryption
         QCA::Initializer init;
+
     public:
         DataHandler();
         ~DataHandler();
