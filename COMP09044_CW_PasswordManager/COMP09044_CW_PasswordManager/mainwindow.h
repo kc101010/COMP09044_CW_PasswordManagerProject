@@ -11,6 +11,7 @@
 #include <QTableWidget>
 #include "accountdirectory.h"
 #include "newaccount.h"
+#include "breachchecker.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }

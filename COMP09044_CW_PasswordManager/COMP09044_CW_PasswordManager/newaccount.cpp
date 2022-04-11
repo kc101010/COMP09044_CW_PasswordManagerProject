@@ -32,6 +32,7 @@ void NewAccount::on_buttonSubmit_clicked()
 {
     //declare messagebox for feedback
     QMessageBox msg;
+    msg.setWindowTitle("Account status");
 
     //if generate password is checked or user passwords match
     if((pword_check_state == true) || (ui->input_ConfirmPassword->text() == ui->input_Password->text())){

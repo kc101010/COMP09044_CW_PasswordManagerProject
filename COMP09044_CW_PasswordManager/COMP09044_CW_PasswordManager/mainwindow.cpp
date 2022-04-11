@@ -24,6 +24,7 @@ void MainWindow::setAccountList(){
     QTableWidget* tmp = centralWidget()->findChild<QTableWidget*>("List_accounts");
     //set number of rows to number of accounts in account directory
     tmp->setRowCount(Accounts.size());
+    tmp->setToolTip("Double click to perform a data check!");
 
     //create new widget to interact with rows within table
     QTableWidgetItem* it;
@@ -70,11 +71,15 @@ void MainWindow::on_List_accounts_itemDoubleClicked(QTableWidgetItem *item)
 
     //get the current row and pull the data from the hash table
     Account* acc_tmp = Accounts.at(item->row());
+    BreachChecker* bchk = new BreachChecker(acc_tmp->get_email());
     qDebug() << acc_tmp->get_username();
     qDebug() << acc_tmp->get_email();
     qDebug() << acc_tmp->get_date_created();
     qDebug() << acc_tmp->get_last_use() << Qt::endl;
 
+    bchk->check_if_breached();
+
+    delete bchk;
     //FUTURE/To-do: open data in new account form to allow user editing
 
 }
