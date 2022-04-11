@@ -36,6 +36,8 @@ public:
             NewAccount->setObjectName(QString::fromUtf8("NewAccount"));
         NewAccount->setWindowModality(Qt::NonModal);
         NewAccount->resize(400, 300);
+        NewAccount->setMinimumSize(QSize(400, 300));
+        NewAccount->setMaximumSize(QSize(400, 300));
         NewAccount->setFocusPolicy(Qt::NoFocus);
         NewAccount->setContextMenuPolicy(Qt::NoContextMenu);
         buttonSubmit = new QPushButton(NewAccount);

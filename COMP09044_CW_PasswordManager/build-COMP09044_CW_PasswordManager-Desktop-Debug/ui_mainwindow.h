@@ -59,6 +59,7 @@ public:
             MainWindow->setObjectName(QString::fromUtf8("MainWindow"));
         MainWindow->resize(800, 600);
         MainWindow->setMinimumSize(QSize(800, 600));
+        MainWindow->setMaximumSize(QSize(800, 600));
         actionNew_Account = new QAction(MainWindow);
         actionNew_Account->setObjectName(QString::fromUtf8("actionNew_Account"));
         actionRefresh = new QAction(MainWindow);
