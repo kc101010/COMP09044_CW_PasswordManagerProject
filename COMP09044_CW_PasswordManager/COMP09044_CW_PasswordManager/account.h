@@ -11,12 +11,14 @@
 #include <QDate>
 #include <QDebug>
 #include <QException>
+#include <QRandomGenerator>
 #include <QRegularExpression>
 #include <QString>
 
 class Account
 {
     private:
+        int id;
         QString username;       //store username for account
         QString password;       //store hashed password for account
         QString email;          //store email for account
@@ -37,6 +39,8 @@ class Account
         void set_last_use(QDate date);
         QDate get_date_created();
         void set_date_created(QDate creation_date);
+        int get_id();
+        void set_id();
 
 };
 

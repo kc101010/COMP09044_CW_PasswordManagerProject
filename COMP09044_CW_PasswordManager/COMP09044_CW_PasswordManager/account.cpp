@@ -15,6 +15,7 @@ Account::Account(QString un, QString pw, QString em, QDate dc)
         set_password(pw);
         set_email(em);
         set_date_created(dc);
+        set_id();
     //otherwise catch the exception and print information
     }catch(QException e){
         qDebug() << "Account creation failed: " << e.what() << Qt::endl;
@@ -99,6 +100,20 @@ void Account::set_date_created(QDate creation_date){
         qDebug() << "Could not set creation date - Not valid" << Qt::endl;
         throw Inputvalexcept();
     }
+}
+
+//function returns numeric id when called
+int Account::get_id(){
+    return id;
+}
+
+//function generates numeric id based on certain properties
+void Account::set_id(){
+
+    int userlen = username.length();
+    int emaillen = email.length();
+    id = userlen + emaillen;
+
 }
 
 

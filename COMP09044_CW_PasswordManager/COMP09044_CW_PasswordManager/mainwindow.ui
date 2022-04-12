@@ -46,6 +46,9 @@
     </property>
    </widget>
    <widget class="QComboBox" name="input_Sort">
+    <property name="enabled">
+     <bool>false</bool>
+    </property>
     <property name="geometry">
      <rect>
       <x>660</x>
@@ -212,6 +215,19 @@
     </property>
     <property name="placeholderText">
      <string>Search</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="buttton_Sort">
+    <property name="geometry">
+     <rect>
+      <x>660</x>
+      <y>20</y>
+      <width>121</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Sort Accounts</string>
     </property>
    </widget>
   </widget>

@@ -12,24 +12,23 @@ AccountDirectory::AccountDirectory()
     //AccDirectory.print_table();
 }
 
-void AccountDirectory::sort_accounts(Account* A[] , int size){
+//function performs an insertion sort on a given array of integers
+int* AccountDirectory::sort_accounts(int arr[], int size){
 
-    int i, j;
-    Account* v;
+    int j{0}, k{0};
 
-    for(i = 2; i <= size; i++){
-        v = A[i];
+    for(int i{1}; i < size; i++){
+        k = arr[i];
         j = i;
 
-        while(A[j - 1]->get_date_created() > v->get_date_created()){
-            A[j] = A[j - 1];
+        while(j > 0 && arr[j - 1] > k){
+            arr[j] = arr[j - 1];
             j--;
         }
-
-        A[j] = v;
+        arr[j] = k;
     }
 
-
+    return arr;
 }
 
 void AccountDirectory::new_account(Account* in){

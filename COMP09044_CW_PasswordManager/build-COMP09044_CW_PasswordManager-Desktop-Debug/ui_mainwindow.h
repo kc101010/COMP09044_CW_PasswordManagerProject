@@ -44,6 +44,7 @@ public:
     QLabel *label_date_last_used;
     QPushButton *button_click_search;
     QLineEdit *search_input;
+    QPushButton *buttton_Sort;
     QMenuBar *menubar;
     QMenu *menuFiles;
     QMenu *menuEdit;
@@ -81,6 +82,7 @@ public:
         input_Sort->addItem(QString());
         input_Sort->addItem(QString());
         input_Sort->setObjectName(QString::fromUtf8("input_Sort"));
+        input_Sort->setEnabled(false);
         input_Sort->setGeometry(QRect(660, 20, 121, 21));
         List_accounts = new QTableWidget(centralwidget);
         if (List_accounts->columnCount() < 4)
@@ -124,6 +126,9 @@ public:
         search_input = new QLineEdit(centralwidget);
         search_input->setObjectName(QString::fromUtf8("search_input"));
         search_input->setGeometry(QRect(112, 20, 501, 21));
+        buttton_Sort = new QPushButton(centralwidget);
+        buttton_Sort->setObjectName(QString::fromUtf8("buttton_Sort"));
+        buttton_Sort->setGeometry(QRect(660, 20, 121, 23));
         MainWindow->setCentralWidget(centralwidget);
         menubar = new QMenuBar(MainWindow);
         menubar->setObjectName(QString::fromUtf8("menubar"));
@@ -182,6 +187,7 @@ public:
         button_click_search->setText(QCoreApplication::translate("MainWindow", "Go!", nullptr));
         search_input->setText(QString());
         search_input->setPlaceholderText(QCoreApplication::translate("MainWindow", "Search", nullptr));
+        buttton_Sort->setText(QCoreApplication::translate("MainWindow", "Sort Accounts", nullptr));
         menuFiles->setTitle(QCoreApplication::translate("MainWindow", "Files", nullptr));
         menuEdit->setTitle(QCoreApplication::translate("MainWindow", "Edit", nullptr));
         menuOptions->setTitle(QCoreApplication::translate("MainWindow", "Options", nullptr));

@@ -8,6 +8,7 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
+#include <QDate>
 #include <QTableWidget>
 #include "accountdirectory.h"
 #include "newaccount.h"
@@ -31,6 +32,8 @@ private slots:
     void on_actionNew_Account_triggered();
     void on_actionRefresh_triggered();
     void on_input_Sort_currentIndexChanged(const QString &arg1);
+
+    void on_buttton_Sort_clicked();
 
 private:
     Ui::MainWindow *ui;

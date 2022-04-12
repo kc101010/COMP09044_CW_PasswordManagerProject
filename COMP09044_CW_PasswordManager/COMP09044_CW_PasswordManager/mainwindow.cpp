@@ -14,7 +14,7 @@ MainWindow::MainWindow(QWidget *parent)
     ui->setupUi(this);
 }
 
-
+//function sets the main table on primary interface
 void MainWindow::setAccountList(){
 
     //Refresh accounts to include new data
@@ -62,7 +62,7 @@ MainWindow::~MainWindow()
 }
 
 
-
+//function allows for data checking by double clicking
 void MainWindow::on_List_accounts_itemDoubleClicked(QTableWidgetItem *item)
 {
 
@@ -77,13 +77,13 @@ void MainWindow::on_List_accounts_itemDoubleClicked(QTableWidgetItem *item)
     qDebug() << acc_tmp->get_date_created();
     qDebug() << acc_tmp->get_last_use() << Qt::endl;
 
+    //perform check
     bchk->check_if_breached();
 
     delete bchk;
-    //FUTURE/To-do: open data in new account form to allow user editing
-
 }
 
+//function handles new account
 void MainWindow::on_actionNew_Account_triggered()
 {
     //create a new dialog as NewAccount ui and execute
@@ -91,7 +91,7 @@ void MainWindow::on_actionNew_Account_triggered()
     dlg->exec();
 }
 
-
+//function refreshes main interface table
 void MainWindow::on_actionRefresh_triggered()
 {
     this->setAccountList();
@@ -100,4 +100,36 @@ void MainWindow::on_actionRefresh_triggered()
 void MainWindow::on_input_Sort_currentIndexChanged(const QString &arg1)
 {
     qDebug() << arg1 << Qt::endl;
+}
+
+//function sorts account ids when clicked
+void MainWindow::on_buttton_Sort_clicked()
+{
+    try{
+        //declare array for ids and int to store array size
+        int id_arr[Accounts.size()];
+
+        //loop through Account list
+        for(int i{0}; i < Accounts.size(); i++){
+            //temporarily store account
+            Account* tmp = Accounts.at(i);
+
+            //if the account exists and has a username
+            if(tmp && tmp->get_username().size() > 0){
+                 //store account id to id array
+                 id_arr[i] = (int) tmp->get_id();
+            }
+       }
+
+       //sort accounts and store them to a new variable
+       int* sorted_id = Accounts.sort_accounts(id_arr, Accounts.size());
+
+       //loop through and print each sorted id
+       for(int i{0}; i < Accounts.size(); i++){
+           qDebug() << *(sorted_id + i);
+       }
+    }catch(QException e){
+        qDebug() << e.what() << Qt::endl;
+    }
+
 }
