@@ -26,7 +26,7 @@ public:
     int* sort_accounts(int arr[], int size);
     void search_accounts(QString search_term);
     void new_account(Account* in);
-    void delete_account();
+    void delete_account(Account* in);
     void modify_account();
     void refresh_list();
     Account* at(int index);

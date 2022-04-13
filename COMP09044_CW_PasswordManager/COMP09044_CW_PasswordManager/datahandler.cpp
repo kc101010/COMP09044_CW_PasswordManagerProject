@@ -130,7 +130,7 @@ void DataHandler::deleteAccount(Account *acc_del){
     }
 }
 
-void DataHandler::editAccount(Account *acc_edit){
+void DataHandler::editAccount(Account *prev, Account *acc_edit){
     try{
         //open new connnection to database and declare new query
         db.open();
@@ -145,8 +145,8 @@ void DataHandler::editAccount(Account *acc_edit){
         stm.bindValue(2, acc_edit->get_email());
         stm.bindValue(3, acc_edit->get_last_use());
         stm.bindValue(4, acc_edit->get_date_created());
-        stm.bindValue(5, acc_edit->get_username());
-        stm.bindValue(6, acc_edit->get_password());
+        stm.bindValue(5, prev->get_username());
+        stm.bindValue(6, prev->get_email());
 
         stm.exec();
 

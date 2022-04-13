@@ -12,6 +12,22 @@ MainWindow::MainWindow(QWidget *parent)
     , ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
+    /**
+    auto list = ui->List_accounts;
+    list->setContextMenuPolicy(Qt::CustomContextMenu);
+    connect(list, &QTableWidget::customContextMenuRequested, this, &MainWindow::customContextMenuRequested);
+
+    QAction* new_acc = new QAction("New Account", this);
+    connect(new_acc, SIGNAL(triggered()), this, SLOT(on_actionNew_Account_triggered()));
+    menu->addAction(new_acc);
+
+    QAction* edit_acc = new QAction("Edit Account", this);
+    connect(edit_acc, SIGNAL(triggered()), this, SLOT(edit_account()));
+    menu->addAction(edit_acc);
+
+    QAction* del_acc = new QAction("Delete Account", this);
+    connect(del_acc, SIGNAL(triggered()), this, SLOT(on_actionNew_Account_triggered()));
+    menu->addAction(del_acc);**/
 }
 
 //function sets the main table on primary interface
@@ -24,6 +40,7 @@ void MainWindow::setAccountList(){
     QTableWidget* tmp = centralWidget()->findChild<QTableWidget*>("List_accounts");
     //set number of rows to number of accounts in account directory
     tmp->setRowCount(Accounts.size());
+    tmp->setColumnCount(6);
     tmp->setToolTip("Double click to perform a data check!");
 
     //create new widget to interact with rows within table
@@ -52,6 +69,14 @@ void MainWindow::setAccountList(){
             it = new QTableWidgetItem();
             it->setData(Qt::DisplayRole, acc->get_last_use());
             tmp->setItem(i, 3, it);
+
+            it = new QTableWidgetItem();
+            it->setData(Qt::DisplayRole, "EDIT");
+            tmp->setItem(i, 4, it);
+
+            it = new QTableWidgetItem();
+            it->setData(Qt::DisplayRole, "DELETE");
+            tmp->setItem(i, 5, it);
         }
     }
 }
@@ -68,19 +93,23 @@ void MainWindow::on_List_accounts_itemDoubleClicked(QTableWidgetItem *item)
 
     //user double clicks account to edit
     qDebug() << "User clicked: " << item->row();
-
-    //get the current row and pull the data from the hash table
     Account* acc_tmp = Accounts.at(item->row());
-    BreachChecker* bchk = new BreachChecker(acc_tmp->get_email());
     qDebug() << acc_tmp->get_username();
     qDebug() << acc_tmp->get_email();
     qDebug() << acc_tmp->get_date_created();
     qDebug() << acc_tmp->get_last_use() << Qt::endl;
 
-    //perform check
-    bchk->check_if_breached();
+    if(item->column() == 4){
+        edit_account(acc_tmp);
+    }else if(item->column() == 5){
+        Accounts.delete_account(acc_tmp);
+    }else{
+        BreachChecker* bchk = new BreachChecker(acc_tmp->get_email());
+        //perform check
+        bchk->check_if_breached();
 
-    delete bchk;
+        delete bchk;
+    }
 }
 
 //function handles new account
@@ -132,4 +161,14 @@ void MainWindow::on_buttton_Sort_clicked()
         qDebug() << e.what() << Qt::endl;
     }
 
+}
+
+void MainWindow::on_List_accounts_customContextMenuRequested(const QPoint &pos)
+{
+    menu->popup(ui->List_accounts->mapToGlobal(pos));
+}
+
+void MainWindow::edit_account(Account* ed){
+    QDialog* dlg = new NewAccount(ed);
+    dlg->exec();
 }

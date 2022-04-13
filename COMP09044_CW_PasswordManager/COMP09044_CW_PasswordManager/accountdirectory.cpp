@@ -35,6 +35,9 @@ void AccountDirectory::new_account(Account* in){
     data.saveAccount(in);
 }
 
+void AccountDirectory::delete_account(Account* in){
+    data.deleteAccount(in);
+}
 
 void AccountDirectory::refresh_list(){
     AccDirectory = data.readAccountDirectory();

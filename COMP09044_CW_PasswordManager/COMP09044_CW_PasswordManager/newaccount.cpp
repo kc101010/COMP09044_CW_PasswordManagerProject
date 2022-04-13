@@ -17,6 +17,20 @@ NewAccount::NewAccount(QWidget *parent) :
     ui->buttonSubmit->setEnabled(false);
 }
 
+NewAccount::NewAccount(Account *edit, QWidget *parent) :
+    QDialog(parent),
+    ui(new Ui::NewAccount)
+{
+    ui->setupUi(this);
+    this->setWindowTitle("Edit Account");
+    ui->buttonSubmit->setEnabled(false);
+    ui->input_Username->setText(edit->get_username());
+    ui->input_Email->setText(edit->get_email());
+    ui->input_Password->setText(edit->get_password());
+    ui->input_ConfirmPassword->setText(edit->get_password());
+    to_add = edit;
+}
+
 NewAccount::~NewAccount()
 {
     delete ui;
@@ -33,6 +47,7 @@ void NewAccount::on_buttonSubmit_clicked()
     //declare messagebox for feedback
     QMessageBox msg;
     msg.setWindowTitle("Account status");
+    Account* prev = to_add;
 
     //if generate password is checked or user passwords match
     if((pword_check_state == true) || (ui->input_ConfirmPassword->text() == ui->input_Password->text())){
@@ -66,15 +81,16 @@ void NewAccount::on_buttonSubmit_clicked()
             to_add->set_last_use(today);
 
             //set messagebox text to provide user feedback
-            msg.setText("Account successfully created!");
+            msg.setText("Account successfully edited!");
             msg.exec();
 
             //save the account to the database
-            dh->saveAccount(to_add);
+            dh->editAccount(prev, to_add);
 
             //free datahandler and account instances
             delete dh;
             delete to_add;
+            delete prev;
 
             //close new account ui
             this->~NewAccount();

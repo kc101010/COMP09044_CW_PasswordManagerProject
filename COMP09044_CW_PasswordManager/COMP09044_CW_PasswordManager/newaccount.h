@@ -28,6 +28,7 @@ class NewAccount : public QDialog
 public:
 
     explicit NewAccount(QWidget *parent = 0);
+    explicit NewAccount(Account* edit, QWidget *parent = 0);
     ~NewAccount();
 
 private slots:
