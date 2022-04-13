@@ -44,6 +44,7 @@ private:
     Ui::NewAccount *ui;
     Account* to_add;
     bool pword_check_state;
+    bool is_edit;
 
 };
 

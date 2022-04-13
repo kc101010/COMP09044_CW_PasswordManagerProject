@@ -137,7 +137,7 @@ void DataHandler::editAccount(Account *prev, Account *acc_edit){
         QSqlQuery stm;
 
         //prepare statement to delete existing account
-        stm.prepare("UPDATE accounts SET username = ?, password = ?, email = ?, last_used = ?, creation_date = ? WHERE username LIKE ? AND email LIKE ? ");
+        stm.prepare("UPDATE accounts SET username = ?, password = ?, email = ?, last_used = ?, creation_date = ? WHERE username LIKE ? AND email LIKE ? OR username LIKE ? ");
 
         //bind account informataion to sql statement
         stm.bindValue(0, acc_edit->get_username());
@@ -147,6 +147,7 @@ void DataHandler::editAccount(Account *prev, Account *acc_edit){
         stm.bindValue(4, acc_edit->get_date_created());
         stm.bindValue(5, prev->get_username());
         stm.bindValue(6, prev->get_email());
+        stm.bindValue(7, prev->get_username());
 
         stm.exec();
 
