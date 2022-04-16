@@ -28,6 +28,7 @@ class Account
 
     public:
         Account(QString un, QString pw, QString em, QDate dc);  //constructor used to set up account
+        Account(int id, QString un, QString pw, QString em, QDate dc);
         Account();
         QString get_password();
         void set_password(QString new_pword);
@@ -41,6 +42,7 @@ class Account
         void set_date_created(QDate creation_date);
         int get_id();
         void set_id();
+        void set_id(int id_to_set);
 
 };
 

@@ -90,7 +90,8 @@ void DataHandler::saveAccount(Account *acc_save){
 
         //bind account informataion to sql statement
         stm.bindValue(0, acc_save->get_username());
-        stm.bindValue(1, acc_save->get_password());
+        QString hashed = QCryptographicHash::hash(acc_save->get_password().toUtf8(), QCryptographicHash::Sha3_512);
+        stm.bindValue(1, hashed);
         stm.bindValue(2, acc_save->get_email());
         stm.bindValue(3, acc_save->get_last_use());
         stm.bindValue(4, acc_save->get_date_created());

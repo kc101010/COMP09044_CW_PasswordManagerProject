@@ -22,6 +22,21 @@ Account::Account(QString un, QString pw, QString em, QDate dc)
     }
 }
 
+Account::Account(int id, QString un, QString pw, QString em, QDate dc)
+{
+    //try to set various account details
+    try{
+        set_username(un);
+        set_password(pw);
+        set_email(em);
+        set_date_created(dc);
+        set_id(id);
+    //otherwise catch the exception and print information
+    }catch(QException e){
+        qDebug() << "Account creation failed: " << e.what() << Qt::endl;
+    }
+}
+
 //function allows viewing of stored password
 QString Account::get_password(){
     return password;
@@ -112,9 +127,14 @@ void Account::set_id(){
 
     int userlen = username.length();
     int emaillen = email.length();
-    id = userlen + emaillen;
+    id = (userlen + emaillen) * QRandomGenerator::global()->bounded(2, 8);
 
 }
+
+void Account::set_id(int id_to_set){
+    id = id_to_set;
+}
+
 
 
 

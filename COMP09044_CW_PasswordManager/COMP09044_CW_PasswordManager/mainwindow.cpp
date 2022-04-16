@@ -12,22 +12,6 @@ MainWindow::MainWindow(QWidget *parent)
     , ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
-    /**
-    auto list = ui->List_accounts;
-    list->setContextMenuPolicy(Qt::CustomContextMenu);
-    connect(list, &QTableWidget::customContextMenuRequested, this, &MainWindow::customContextMenuRequested);
-
-    QAction* new_acc = new QAction("New Account", this);
-    connect(new_acc, SIGNAL(triggered()), this, SLOT(on_actionNew_Account_triggered()));
-    menu->addAction(new_acc);
-
-    QAction* edit_acc = new QAction("Edit Account", this);
-    connect(edit_acc, SIGNAL(triggered()), this, SLOT(edit_account()));
-    menu->addAction(edit_acc);
-
-    QAction* del_acc = new QAction("Delete Account", this);
-    connect(del_acc, SIGNAL(triggered()), this, SLOT(on_actionNew_Account_triggered()));
-    menu->addAction(del_acc);**/
 }
 
 //function sets the main table on primary interface
@@ -157,10 +141,13 @@ void MainWindow::on_buttton_Sort_clicked()
        for(int i{0}; i < Accounts.size(); i++){
            qDebug() << *(sorted_id + i);
        }
+
+       QDialog *sorted = new sort(Accounts.size(), sorted_id);
+       sorted->exec();
+
     }catch(QException e){
         qDebug() << e.what() << Qt::endl;
     }
-
 }
 
 void MainWindow::on_List_accounts_customContextMenuRequested(const QPoint &pos)
@@ -169,6 +156,6 @@ void MainWindow::on_List_accounts_customContextMenuRequested(const QPoint &pos)
 }
 
 void MainWindow::edit_account(Account* ed){
-    QDialog* dlg = new NewAccount(ed);
+    QDialog *dlg = new NewAccount(ed);
     dlg->exec();
 }

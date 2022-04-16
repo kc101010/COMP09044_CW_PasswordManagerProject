@@ -19,6 +19,7 @@
 #include <QSqlError>
 #include <QSqlQuery>
 #include <QSqlResult>
+#include <QCryptographicHash>
 #include <QtCrypto>
 
 class DataHandler

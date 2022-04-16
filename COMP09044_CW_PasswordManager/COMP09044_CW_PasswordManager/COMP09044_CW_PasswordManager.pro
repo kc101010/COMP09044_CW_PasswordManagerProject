@@ -18,6 +18,7 @@ SOURCES += \
     mainwindow.cpp \
     newaccount.cpp \
     password.cpp \
+    sort.cpp \
     unittest.cpp
 
 HEADERS += \
@@ -30,11 +31,13 @@ HEADERS += \
     mainwindow.h \
     newaccount.h \
     password.h \
+    sort.h \
     unittest.h
 
 FORMS += \
     mainwindow.ui \
-    newaccount.ui
+    newaccount.ui \
+    sort.ui
 
 LIBS += -L$${PATH_QCA_LIB} -lqca
 
@@ -42,3 +45,5 @@ LIBS += -L$${PATH_QCA_LIB} -lqca
 qnx: target.path = /tmp/$${TARGET}/bin
 else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
+
+DISTFILES +=
