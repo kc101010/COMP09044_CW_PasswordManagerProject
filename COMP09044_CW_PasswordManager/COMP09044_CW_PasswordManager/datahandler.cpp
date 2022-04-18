@@ -28,7 +28,6 @@ DataHandler::DataHandler(){
         //print exception info
         qDebug() << e.text() << e.type() << Qt::endl;
     }
-
 }
 
 DataHandler::~DataHandler(){
