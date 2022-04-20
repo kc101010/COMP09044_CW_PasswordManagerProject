@@ -87,9 +87,11 @@ void DataHandler::saveAccount(Account *acc_save){
         //prepare statement to save a new account
         stm.prepare("INSERT INTO accounts(username, password, email, last_used, creation_date) VALUES(?,?,?,?,?)");
 
+        //hash password to SHA-3-512
+        QString hashed = QCryptographicHash::hash(acc_save->get_password().toUtf8(), QCryptographicHash::Sha3_512);
+
         //bind account informataion to sql statement
         stm.bindValue(0, acc_save->get_username());
-        QString hashed = QCryptographicHash::hash(acc_save->get_password().toUtf8(), QCryptographicHash::Sha3_512);
         stm.bindValue(1, hashed);
         stm.bindValue(2, acc_save->get_email());
         stm.bindValue(3, acc_save->get_last_use());
@@ -139,9 +141,12 @@ void DataHandler::editAccount(Account *prev, Account *acc_edit){
         //prepare statement to delete existing account
         stm.prepare("UPDATE accounts SET username = ?, password = ?, email = ?, last_used = ?, creation_date = ? WHERE username LIKE ? AND email LIKE ? OR username LIKE ? ");
 
+        //hash password to SHA-3-512
+        QString hashed = QCryptographicHash::hash(acc_edit->get_password().toUtf8(), QCryptographicHash::Sha3_512);
+
         //bind account informataion to sql statement
         stm.bindValue(0, acc_edit->get_username());
-        stm.bindValue(1, acc_edit->get_password());
+        stm.bindValue(1, hashed);
         stm.bindValue(2, acc_edit->get_email());
         stm.bindValue(3, acc_edit->get_last_use());
         stm.bindValue(4, acc_edit->get_date_created());

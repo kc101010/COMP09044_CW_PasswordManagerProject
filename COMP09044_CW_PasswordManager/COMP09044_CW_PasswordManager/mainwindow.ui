@@ -185,6 +185,9 @@
     </property>
    </widget>
    <widget class="QPushButton" name="button_click_search">
+    <property name="enabled">
+     <bool>false</bool>
+    </property>
     <property name="geometry">
      <rect>
       <x>610</x>
@@ -202,6 +205,9 @@
     </property>
    </widget>
    <widget class="QLineEdit" name="search_input">
+    <property name="enabled">
+     <bool>false</bool>
+    </property>
     <property name="geometry">
      <rect>
       <x>112</x>

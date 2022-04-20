@@ -114,6 +114,7 @@ public:
         label_date_last_used->setGeometry(QRect(330, 60, 91, 16));
         button_click_search = new QPushButton(centralwidget);
         button_click_search->setObjectName(QString::fromUtf8("button_click_search"));
+        button_click_search->setEnabled(false);
         button_click_search->setGeometry(QRect(610, 20, 41, 21));
         QIcon icon;
         QString iconThemeName = QString::fromUtf8("SP_DialogApplyButton");
@@ -125,6 +126,7 @@ public:
         button_click_search->setIcon(icon);
         search_input = new QLineEdit(centralwidget);
         search_input->setObjectName(QString::fromUtf8("search_input"));
+        search_input->setEnabled(false);
         search_input->setGeometry(QRect(112, 20, 501, 21));
         buttton_Sort = new QPushButton(centralwidget);
         buttton_Sort->setObjectName(QString::fromUtf8("buttton_Sort"));
