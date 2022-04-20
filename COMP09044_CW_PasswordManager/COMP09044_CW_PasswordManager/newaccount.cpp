@@ -58,6 +58,13 @@ void NewAccount::on_buttonSubmit_clicked()
 
     //if generate password is checked or user passwords match
     if((pword_check_state == true) || (ui->input_ConfirmPassword->text() == ui->input_Password->text())){
+        //if fields are empty on submit, prevent them from being saved
+        if(ui->input_Email->text().isEmpty() || ui->input_Username->text().isEmpty()){
+            msg.setText("Account could not be created - please try again.");
+            msg.exec();
+            return;
+        }
+
         //declare string to hold password
         QString password;
 
@@ -87,12 +94,8 @@ void NewAccount::on_buttonSubmit_clicked()
                         );
             to_add->set_last_use(today);
 
-            //set messagebox text to provide user feedback
-            msg.setText("Account successfully added!");
-            msg.exec();
-
             //save the account to the database
-            if(is_edit){
+            if(is_edit == true){
                 dh->editAccount(prev, to_add);
             }else{
                 dh->saveAccount(to_add);
@@ -106,16 +109,18 @@ void NewAccount::on_buttonSubmit_clicked()
             this->~NewAccount();
 
         }catch(Inputvalexcept e){
-            qDebug() << e.what() << Qt::endl;
-            msg.setText("Account could not be created - please try again.");
+            msg.setText(e.what());
             msg.exec();
-
+            this->~NewAccount();
         }
+
+        //set messagebox text to provide user feedback
+        msg.setText("Account successfully added!");
+        msg.exec();
     }else{
         //if passwords don't match, output a message and don't save anything
         msg.setText("Account creation failed - passwords do not match");
         msg.exec();
-
     }
 }
 

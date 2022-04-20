@@ -13,6 +13,7 @@
 #include <QDebug>
 #include <QException>
 #include <QFile>
+#include <QMessageBox>
 #include <QString>
 #include <QSqlDatabase>
 #include <QSqlDriver>

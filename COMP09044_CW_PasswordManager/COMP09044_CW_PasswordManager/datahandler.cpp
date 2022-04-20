@@ -26,7 +26,12 @@ DataHandler::DataHandler(){
         db.close();
     }catch(QSqlError e){
         //print exception info
-        qDebug() << e.text() << e.type() << Qt::endl;
+        QString msg;
+        msg.append(e.text());
+        msg.append(e.type());
+        QMessageBox eb;
+        eb.setText(msg);
+        eb.setIcon(QMessageBox::Critical);
     }
 }
 
@@ -72,7 +77,12 @@ HashTable<int, Account*> DataHandler::readAccountDirectory(){
 
     }catch(QSqlError e){
         //print exception info
-        qDebug() << e.text() << e.type() << Qt::endl;
+        QString msg;
+        msg.append(e.text());
+        msg.append(e.type());
+        QMessageBox eb;
+        eb.setText(msg);
+        eb.setIcon(QMessageBox::Critical);
     }
 
     return data;
@@ -104,7 +114,12 @@ void DataHandler::saveAccount(Account *acc_save){
         db.close();
     }catch(QSqlError e){
         //print exception info
-        qDebug() << e.text() << e.type() << Qt::endl;
+        QString msg;
+        msg.append(e.text());
+        msg.append(e.type());
+        QMessageBox eb;
+        eb.setText(msg);
+        eb.setIcon(QMessageBox::Critical);
     }
 
 }
@@ -128,7 +143,12 @@ void DataHandler::deleteAccount(Account *acc_del){
         stm.finish();
         db.close();
     }catch(QSqlError e){
-        qDebug() << e.text() << e.type() << Qt::endl;
+        QString msg;
+        msg.append(e.text());
+        msg.append(e.type());
+        QMessageBox eb;
+        eb.setText(msg);
+        eb.setIcon(QMessageBox::Critical);
     }
 }
 
@@ -160,7 +180,12 @@ void DataHandler::editAccount(Account *prev, Account *acc_edit){
         stm.finish();
         db.close();
     }catch(QSqlError e){
-        qDebug() << e.text() << e.type() << Qt::endl;
+        QString msg;
+        msg.append(e.text());
+        msg.append(e.type());
+        QMessageBox eb;
+        eb.setText(msg);
+        eb.setIcon(QMessageBox::Critical);
     }
 }
 
@@ -168,7 +193,9 @@ void DataHandler::setFile(QString fname){
     if(fname.contains(".sqlite")){
         DataFile.setFileName(fname);
     }else{
-        qDebug() << "Name is not valid!" << Qt::endl;
+        QMessageBox eb;
+        eb.setText("Name is not valid!");
+        eb.setIcon(QMessageBox::Critical);
     }
 }
 
