@@ -21,14 +21,14 @@
 #include <QSqlQuery>
 #include <QSqlResult>
 #include <QCryptographicHash>
-#include <QtCrypto>
+//#include <QtCrypto>
 
 class DataHandler
 {
     private:
         QSqlDatabase db;   //stores database to be used
         QFile DataFile;    //stores database file for encryption/decryption
-        QCA::Initializer init;
+        //QCA::Initializer init;
 
     public:
         DataHandler();

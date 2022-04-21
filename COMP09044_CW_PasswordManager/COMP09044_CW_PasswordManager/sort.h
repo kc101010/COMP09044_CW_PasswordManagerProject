@@ -19,7 +19,7 @@ class sort : public QDialog
     Q_OBJECT
 
 public:
-    explicit sort(int size, int* sort, QWidget *parent = nullptr);
+    explicit sort(int size, QVector<int> sort, QWidget *parent = nullptr);
     ~sort();
 
 private:

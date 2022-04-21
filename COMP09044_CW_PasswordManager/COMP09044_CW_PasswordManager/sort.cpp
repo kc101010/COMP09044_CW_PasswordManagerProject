@@ -7,7 +7,7 @@
 #include "sort.h"
 #include "ui_sort.h"
 
-sort::sort(int size, int* sort, QWidget *parent) :
+sort::sort(int size, QVector<int> sort, QWidget *parent) :
     QDialog(parent),
     ui(new Ui::sort)
 {
@@ -15,7 +15,7 @@ sort::sort(int size, int* sort, QWidget *parent) :
     this->setWindowTitle("Sorted IDs");
 
     for(int i = 0; i < size; i++){
-        ui->listWidget->addItem(QString::number(*(sort + i)));
+        ui->listWidget->addItem(QString::number(sort.at(i)));
     }
 }
 

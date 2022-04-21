@@ -23,7 +23,7 @@ private:
 
 public:
     AccountDirectory();
-    int* sort_accounts(int arr[], int size);
+    QVector<int> sort_accounts(QVector<int> arr, int size);
     void search_accounts(QString search_term);
     void new_account(Account* in);
     void delete_account(Account* in);

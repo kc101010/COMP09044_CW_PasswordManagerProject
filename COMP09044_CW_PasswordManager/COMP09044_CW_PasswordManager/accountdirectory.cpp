@@ -13,7 +13,7 @@ AccountDirectory::AccountDirectory()
 }
 
 //function performs an insertion sort on a given array of integers
-int* AccountDirectory::sort_accounts(int arr[], int size){
+QVector<int> AccountDirectory::sort_accounts(QVector<int> arr, int size){
 
     int j{0}, k{0};
 

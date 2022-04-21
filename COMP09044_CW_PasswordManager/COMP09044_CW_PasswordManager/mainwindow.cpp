@@ -120,7 +120,8 @@ void MainWindow::on_buttton_Sort_clicked()
 {
     try{
         //declare array for ids and int to store array size
-        int id_arr[Accounts.size()];
+        QVector<int> id_arr;
+        id_arr.resize(Accounts.size());
 
         //loop through Account list
         for(int i{0}; i < Accounts.size(); i++){
@@ -130,16 +131,16 @@ void MainWindow::on_buttton_Sort_clicked()
             //if the account exists and has a username
             if(tmp && tmp->get_username().size() > 0){
                  //store account id to id array
-                 id_arr[i] = (int) tmp->get_id();
+                 id_arr.push_front(tmp->get_id());
             }
        }
 
        //sort accounts and store them to a new variable
-       int* sorted_id = Accounts.sort_accounts(id_arr, Accounts.size());
+       QVector<int> sorted_id = Accounts.sort_accounts(id_arr, Accounts.size());
 
        //loop through and print each sorted id
        for(int i{0}; i < Accounts.size(); i++){
-           qDebug() << *(sorted_id + i);
+           qDebug() << sorted_id.at(i);
        }
 
        QDialog *sorted = new sort(Accounts.size(), sorted_id);
