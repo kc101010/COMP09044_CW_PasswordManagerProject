@@ -5,13 +5,25 @@ This coursework (code, documents & executable) was graded 51%.
 
 # GETTING STARTED
 
+Unzip the release folder in your preferred location.
+
+The folder should contain three directories
+
++ COMP09044_CW_PasswordManager  (Linux build)
++ password-win-release		(Windows build)
++ tech-doc			(Technical documentation)
+
+(If the Qt IDE is installed then you can simply open the project and build for your system)
+
 ## Windows
 
 The Windows executable is already built, the folder contains all necessary dependancies thus the program can be contained within its folder - no installation necessary! This binary will also run on Linux if need be.
 
 ## Linux
 
-Build via Qt creator or make. 
+Open 'COMP09044_CW_PasswordManager' in a terminal and simply run 'make'.
+
+This will generate all dependencies alongside the Linux executable itself which can then be run from the terminal.
 
 # BUILT WITH
 + QT
