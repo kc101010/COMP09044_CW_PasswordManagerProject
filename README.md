@@ -1,7 +1,9 @@
 # ABOUT: COMP09044_CW_PasswordManagerProject
 My coursework for COMP09044 'Algorithms &amp; Collections' @ University of the West of Scotland.
 
-This coursework (code, documents & executable) was graded 51%.
+This coursework (code, documents & executable) was graded 51%. 
+
+Please find an informative video about the project here; https://youtu.be/OH72ETGePm0
 
 # GETTING STARTED
 
